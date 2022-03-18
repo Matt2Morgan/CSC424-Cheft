@@ -1,0 +1,37 @@
+.banner-wrapper
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E7E9EB;
+    margin-bottom: 20px;
+}
+
+.widget-area
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.widget-wrapper
+{
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #E7E9EB;
+    margin-bottom: 20px;
+}
+
+.widget-header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E7E9EB;
+}
+
+.widget-body
+{
+    padding: 15px;
+}

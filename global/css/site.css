@@ -1,0 +1,147 @@
+body {
+width: 100%;
+height: 100%;
+overflow: hidden;
+
+}
+
+.main {
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+
+.Sidebar-Left {
+float: left;
+position: fixed;
+width: 300px;
+height: 100vh;
+background-color: #446948;
+}
+
+.Sidebar-Left.collapsed {
+  width: 20px;
+}
+
+.content {
+float: left;
+width: calc(100% - 500px);
+height: 100%;
+margin-left: 300px;
+min-height: 100vh;
+background-color: #f2f3f4;
+}
+
+.content.leftCollapse {
+  width: calc(100% - 220px);
+  margin-left: 20px;
+}
+
+.content.rightCollapse {
+  width: calc(100% - 320px);
+}
+
+.content.wholeCollapse {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+}
+
+.Sidebar-Right {
+position: fixed;
+margin-left: calc(calc(100% - 500px) + 300px);
+width: 200px;
+height: 100vh;
+background-color: #f2dd7e;
+}
+
+.Sidebar-Right.collapsed {
+  width: 20px;
+  margin-left: calc(calc(100% - 500px) + 300px + 180px);
+}
+
+
+/* Needs to be reconfigured
+@media(max-width:1200px ){
+    .Sidebar-Left {
+        display: none;
+    }
+    .Sidebar-Right {
+        display: none;
+    }
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+}
+*/
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: transparent;
+    cursor: pointer;
+    border-top: solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-width: 3px;
+    width: 100%;
+    outline: none;
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .collapsible:last-of-type {
+    border-bottom: solid;
+  }
+
+  .collapsible:last-of-type.active {
+    border-bottom: none;
+  }
+
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: transparent;
+  }
+
+  button:focus.collapsible {
+    outline: none;
+  }
+
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .collapse-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: transparent;
+  }
+
+  .collapse-left {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 3rem;
+    width: 20px;
+    z-index: 3;
+  }
+  .collapse-right {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 3rem;
+    width: 20px;
+    z-index: 3;
+  }
