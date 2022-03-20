@@ -1,3 +1,5 @@
+<!-- Everything between !doctype html and the end of the head will be roughly the same on every page-->
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -26,80 +28,112 @@
 </head>
 
 <body>
-
+    <!-- Ive only commented the first widget as the rest is just repeated, please let me know if you have any questions-->
+    <!-- Ive also added some whitespace to break things down in a more readable way-->
     <div class="main">
 
+        <!-- This is the div that will be imported from the javascript file "../../global/js/banner.js" -->
         <div class="Sidebar-Left" id="Sidebar-Left"></div>
 
+        <!-- Begining of page content this is the content that will be edited between pages -->
         <div class="content">
+
+            <!-- This is an example of a banner that would appear at the top of the center of the page -->
             <div class="banner-wrapper">
                 <h1>Welcome to Cheft</h1>
             </div>
+
+            <!-- Begin area beneath the header -->
             <div class="widget-area">
+                <!-- A row takes up 100% of the width of the containing div and scales its height to its content columns inside the row are in fractions of 12 (so 12/12 would be 100% width, 4/12 would be 33% width) -->
                 <div class="row">
+                    <!-- This is a column-6, so that number is 6/12 so its half of the length of the total row -->
+                    <!-- The lg or large specification is what sets the breakpoint, it is basically the pixel count at which the column breaks from its 50% width (6/12) to 100% (12/12)-->
                     <div class="col-lg-6">
+                        <!-- widgetWrapper is nothing more than a container div surrounding what is in the column, it allows for more styling control of the content within as I dont want to edit the column stylings-->
                         <div class="widget-wrapper">
+                            <!-- this is the same as the banner wrapper, basically a simple div with a header inside stylings are linked in index.css-->
                             <div class="widget-header">
                                 <h2>Top Recipes of the Day!</h2>
                             </div>
+                            <!-- this begins the main "body" of the widget or the section that were creating-->
                             <div class="widget-body">
+                                <!-- another row within that body, these rows will contain each "entry" into the section-->
                                 <div class="row">
+
+
+                                    <!-- this col-12 creates a width=100% section within the row to make each col stack on top of each other-->
                                     <div class="col-12">
+                                        <!-- another row, the no-gutters class just removes gutters between columns, gutters are spacing features of columns that are not necessary in this section-->
                                         <div class="row no-gutters">
+                                            <!-- this creates a column inside that row no-gutters that is 2/12 the width of the row it breaks at small which means once the page reaches the small size the column will "break and become 100%"-->
                                             <div class="col-sm-2">
+                                                <!-- this is just a link to the image asset, setting its width and height is risky as it hurts the resizability of the page around it but we can deal with that later-->
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
+                                            <!-- this creates a column next to the col-sm-2 that is 10/12 filling the rest of the width of the row, it too breaks at page size small-->
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <!-- this class just gives the content of this div a top to bottom diretion instead of a right to left direction, ask me if youre confused on this its a little hard to type-->
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                     <div class="col-lg-6">
                         <div class="widget-wrapper">
                             <div class="widget-header">
@@ -107,184 +141,68 @@
                             </div>
                             <div class="widget-body">
                                 <div class="row">
+
+                                    
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col-12">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
                                                 <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
                                             </div>
                                             <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
+                                                <div class="widget-entry">
                                                     <span style="font-size: 24px;">This is a recipe</span>
                                                     <span style="font-size: 16px;">This is a recipe</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="widget-wrapper">
-                            <div class="widget-header">
-                                <h2>Recommended For You!</h2>
-                            </div>
-                            <div class="widget-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="widget-wrapper">
-                            <div class="widget-header">
-                                <h2>Need Help?</h2>
-                            </div>
-                            <div class="widget-body">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-sm-2">
-                                                <img src="../../assets/img/recipe/temp.jpg" width="75px" height="75px">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div style="display:flex; flex-direction:column;">
-                                                    <span style="font-size: 24px;">This is a recipe</span>
-                                                    <span style="font-size: 16px;">This is a recipe</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -292,7 +210,8 @@
                 </div>
             </div>
         </div>
-      
+        
+        <!-- This is the div that will be imported from the javascript file "../../global/js/banner.js" -->
         <div class="Sidebar-Right" id="Sidebar-Right"></div>
       
     </div>

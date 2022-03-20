@@ -35,3 +35,9 @@
 {
     padding: 15px;
 }
+
+.widget-entry
+{
+    display: flex; 
+    flex-direction: column;
+}
