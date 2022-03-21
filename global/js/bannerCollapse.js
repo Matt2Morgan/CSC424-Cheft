@@ -19,28 +19,17 @@ for (i = 0; i < coll.length; i++) {
 //Sidebar collapse logic
 var content = document.getElementsByClassName("content");
 
-var collButtonL = document.getElementsByClassName("collapse-left");
-var sidebarLeft = document.getElementById("Sidebar-Left");
-var menuLeft = document.getElementById("menu-left");
-
-var collButtonR = document.getElementsByClassName("collapse-right");
-var sidebarRight = document.getElementById("Sidebar-Right");
+var collButtonL = document.getElementsByClassName("collapse-sidebar-button");
+var sidebarLeft = document.getElementById("Sidebar");
+var bottomMenu = document.getElementById("bottom-menu");
+var topMenu = document.getElementById("top-menu");
+var menu = document.getElementById("dropdown-menu");
 
 collButtonL[0].addEventListener("click", function() {
-    if (sidebarRight.classList.contains("collapsed"))
-    {
-        content[0].classList.toggle("wholeCollapse");
-    }
-    menuLeft.classList.toggle("d-none");
+    menu.classList.toggle("d-none");
+    bottomMenu.classList.toggle("d-none");
+    topMenu.classList.toggle("d-none");
     sidebarLeft.classList.toggle("collapsed");
     content[0].classList.toggle("leftCollapse");
-})
-
-collButtonR[0].addEventListener("click", function() {
-    if (sidebarLeft.classList.contains("collapsed"))
-    {
-        content[0].classList.toggle("wholeCollapse");
-    }
-    sidebarRight.classList.toggle("collapsed");
-    content[0].classList.toggle("rightCollapse");
+    collButtonL[0].classList.toggle("button-collapsed")
 })

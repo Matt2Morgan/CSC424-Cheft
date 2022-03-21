@@ -13,21 +13,50 @@ height: 100%;
 overflow: hidden;
 }
 
-.Sidebar-Left {
+/* Scrollbar Stylings */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2B502F;
+}
+
+
+/* Sidebar Stylings */
+.Sidebar {
 float: left;
 position: fixed;
 width: 300px;
 height: 100vh;
 background-color: #446948;
+z-index: 9;
 }
 
-.Sidebar-Left.collapsed {
+.sidebar-row {
+  margin-top: 132px;
+  margin-left: 0;
+  margin-right: 0;
+  max-height: calc(100% - 230px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.Sidebar.collapsed {
   width: 20px;
 }
 
 .content {
 float: left;
-width: calc(100% - 500px);
+width: calc(100% - 300px);
 height: 100%;
 margin-left: 300px;
 min-height: 100vh;
@@ -35,30 +64,8 @@ background-color: #f2f3f4;
 }
 
 .content.leftCollapse {
-  width: calc(100% - 220px);
+  width: calc(100% - 20px);
   margin-left: 20px;
-}
-
-.content.rightCollapse {
-  width: calc(100% - 320px);
-}
-
-.content.wholeCollapse {
-  width: calc(100% - 40px);
-  margin-left: 20px;
-}
-
-.Sidebar-Right {
-position: fixed;
-margin-left: calc(calc(100% - 500px) + 300px);
-width: 200px;
-height: 100vh;
-background-color: #f2dd7e;
-}
-
-.Sidebar-Right.collapsed {
-  width: 20px;
-  margin-left: calc(calc(100% - 500px) + 300px + 180px);
 }
 
 
@@ -79,71 +86,179 @@ background-color: #f2dd7e;
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: transparent;
-    cursor: pointer;
-    border-top: solid;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    border-width: 3px;
-    width: 100%;
-    outline: none;
-    text-align: left;
-    font-size: 24px;
-  }
+  background-color: transparent;
+  cursor: pointer;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
 
-  .collapsible:last-of-type {
-    border-bottom: solid;
-  }
+.collapsible.active {
+  padding-bottom: none;
+  border-bottom: none;
+}
 
-  .collapsible:last-of-type.active {
-    border-bottom: none;
-  }
+.collapsible.active + .collapse-content {
+  border-bottom: solid;
+}
+
+.collapsible:last-of-type {
+  border-bottom: solid;
+}
+
+.collapsible:last-of-type.active {
+  border-bottom: none;
+}
 
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
-    background-color: transparent;
-  }
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: transparent;
+}
 
-  button:focus.collapsible {
-    outline: none;
-  }
+button:focus.collapsible {
+  outline: none;
+}
 
-  .collapsible:after {
-    content: '\002B';
-    color: white;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2212";
-  }
-  
-  /* Style the collapsible content. Note: hidden by default */
-  .collapse-content {
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: transparent;
-  }
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
 
-  .collapse-left {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    height: 3rem;
-    width: 20px;
-    z-index: 3;
-  }
-  .collapse-right {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 3rem;
-    width: 20px;
-    z-index: 3;
-  }
+.active:after {
+  content: "\2212";
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapse-content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+}
+
+ul.collapse-content-list {
+  padding-left: 10px;
+  list-style-position: inside;
+}
+
+.collapse-sidebar-button {
+  position: absolute;
+  top: calc(50% - 100px);
+  right: 0;
+  height: 200px;
+  width: 20px;
+  margin-right: -20px;
+  border-left: solid;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-width: 2px;
+  background-color: #446948;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 1000;
+}
+
+.collapse-sidebar-button::before {
+  content: "\003c";
+}
+
+.button-collapsed::before {
+  content: "\003e";
+}
+
+.collapse-sidebar-button:hover {
+  background-color: #2B502F;
+}
+
+.collapse-sidebar-button:focus{
+  outline: none;
+}
+.profile-menu {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: solid;
+  margin-bottom: 10px;
+  height: 73px;
+}
+
+.profile-icon {
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+.profile-name {
+  font-size: 24px;
+  padding-right: 10px;
+}
+
+.top-menu {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+}
+
+.bottom-menu {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+}
+
+.add-menu {
+  border-bottom: solid;
+  height: 49px;
+}
+
+.logout-menu {
+  border-bottom: solid;
+  border-top: solid;
+  height: 49px;
+}
+
+.help-menu {
+  height: 49px;
+}
+
+.add-button {
+  width: 100%;
+  color: black;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button span {
+  font-size: 24px;
+}
+
+.dropdown-menu-custom {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
