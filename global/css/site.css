@@ -35,6 +35,11 @@ overflow: hidden;
   background: #2B502F;
 }
 
+/* Button */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 
 /* Sidebar Stylings */
 .Sidebar {
@@ -44,6 +49,16 @@ width: 300px;
 height: 100vh;
 background-color: #446948;
 z-index: 9;
+color: black;
+}
+
+.Sidebar a {
+  color: inherit;
+}
+
+.Sidebar a:hover {
+  color: #779C7B;
+  text-decoration: none;
 }
 
 .sidebar-row {
@@ -110,7 +125,7 @@ padding: 20px;
 }
 
 .collapsible.active {
-  padding-bottom: none;
+  padding-bottom: 0;
   border-bottom: none;
 }
 
@@ -118,13 +133,6 @@ padding: 20px;
   border-bottom: solid;
 }
 
-.collapsible:last-of-type {
-  border-bottom: solid;
-}
-
-.collapsible:last-of-type.active {
-  border-bottom: none;
-}
 
   
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
