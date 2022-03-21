@@ -63,9 +63,11 @@ z-index: 9;
 float: left;
 width: calc(100% - 300px);
 height: 100%;
+max-height: 100vh;
 margin-left: 300px;
 min-height: 100vh;
 background-color: #f2f3f4;
+padding: 20px;
 }
 
 .content.leftCollapse {
