@@ -1,0 +1,80 @@
+<!-- Everything between !doctype html and the end of the head will be roughly the same on every page-->
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cheft</title>
+    <meta name="author" content="Group 3">
+    <meta name="description" content="Cooking with some theft!">
+    <meta name="keywords" content="Cooking Recipe Social Media" />
+    <meta name="robots" content="RECIPE,FOLLOW">
+    
+    
+    <!-- Load Sidebars -->
+    <script src="../../global/js/banner.js"></script>
+    
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Load Style Sheets-->
+    <link rel="stylesheet" href="./recipe.css">
+    <link rel="stylesheet" href="../../global/css/site.css">
+    
+
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- This is the div that will be imported from the javascript file "../../global/js/banner.js" -->
+        <div class="Sidebar" id="Sidebar"></div>
+
+        <!-- Begining of page content this is the content that will be edited between pages -->
+        <div class="content">
+            <div class="header-row row">
+                <div class="recipe-title col-12">
+                    <h1> RECIPE TITLE </h1>
+                </div>
+                <div class="recipe-author col-12">
+                    <h3> Author: USERNAME </h3>
+                </div>
+            </div>
+
+            <div class="picture-wrapper-row row">
+                <div class="current-picture col-lg-8">
+                    <img src="../../assets/img/recipe/temp.jpg" width="100%" height="500px">
+                </div>
+                <div class="picture-select col-lg-4">
+                    <div class="picture-one">
+                        <img src="../../assets/img/recipe/temp.jpg" width="100%" height="125px">
+                    </div>
+                    <div class="picture-two">
+                        <img src="../../assets/img/recipe/temp.jpg" width="100%" height="125px">
+                    </div>
+                    <div class="picture-three">
+                        <img src="../../assets/img/recipe/temp.jpg" width="100%" height="125px">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Load Sidebars -->
+    <script src="../../global/js/banner.js"></script>
+    <script src="../../global/js/bannerCollapse.js"></script>
+
+    <!-- Load Page Logic -->
+    <script src="./recipe.js"></script>
+</body>
+
+</html>
