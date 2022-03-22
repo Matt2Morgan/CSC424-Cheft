@@ -1,7 +1,33 @@
 //banner.js
 
 ////////////////
-//Sidebar//
+/////Navbar/////
+////////////////
+
+if(document.getElementById("Navbar") != null) {
+    document.getElementById("Navbar").innerHTML+=`
+    <div class="nav-row row">
+        <div class="col-2"><a href="">Home</a></div>
+        <div class="col-2"><a href="">Home</a></div>
+        <div class="col-2"><a href="">Home</a></div>
+        <div class="col-2"><a href="">Home</a></div>
+        <div class="col-2"><div class="nav-dropdown">
+            <button class="nav-dropbtn">Dropdown
+            </button>
+            <div class="nav-dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
+    `
+}
+
+
+
+////////////////
+/////Sidebar////
 ////////////////
 
 if(document.getElementById("Sidebar") != null){

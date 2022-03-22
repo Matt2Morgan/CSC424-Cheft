@@ -40,6 +40,75 @@ overflow: hidden;
   display: none;
 }
 
+/* Navbar Stylings */
+.Navbar {
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 20px;
+  width: calc(100% + 40px);
+  height: 73px;
+  border-bottom: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #ffe97f;
+}
+
+.sticky {
+  position: fixed;
+  top: 20px;
+  height: 73px;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.nav-dropdown .nav-dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Dropdown content (hidden by default) */
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.nav-dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.nav-dropbtn:hover + .nav-dropdown-content {
+  display: block;
+}
+
 
 /* Sidebar Stylings */
 .Sidebar {

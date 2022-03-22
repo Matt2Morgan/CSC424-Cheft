@@ -1,6 +1,7 @@
 .banner-wrapper
 {
     width: calc (100% + 40px);
+    height: 94vh;
     display: flex;
     justify-content: center;
     align-items: center;
