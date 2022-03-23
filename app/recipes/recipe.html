@@ -11,11 +11,10 @@
     <meta name="description" content="Cooking with some theft!">
     <meta name="keywords" content="Cooking Recipe Social Media" />
     <meta name="robots" content="RECIPE,FOLLOW">
-    
-    
-    <!-- Load Sidebars -->
-    <script src="../../global/js/banner.js"></script>
-    
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -37,10 +36,10 @@
         <div class="content">
             <div class="header-row row">
                 <div class="recipe-title col-12">
-                    <h1> RECIPE TITLE </h1>
+                    <h1 id="recipeTitle"></h1>
                 </div>
                 <div class="recipe-author col-12">
-                    <h3> Author: USERNAME </h3>
+                    <h3 id="authorName"> Author: </h3>
                 </div>
             </div>
 
@@ -53,7 +52,7 @@
                 <div class="col-1"><div class="tag"><span>Tag...</span></div></div>
             </div>
 
-            <div class="picture-wrapper-row row">
+            <div class="picture-wrapper-row row" id="imagePath">
                 <div class="current-picture col-lg-8">
                     <img src="../../assets/img/recipe/temp.jpg" width="100%" height="500px">
                 </div>
@@ -72,11 +71,11 @@
 
             <div class="recipe-info-row row">
                 <div class="col-12"><h2>Information</h2></div>
-                <div class="col-lg-4"><span>Prep Time: </span></div>
-                <div class="col-lg-4"><span>Cook Time: </span></div>
-                <div class="col-lg-4"><span>Total Time: </span></div>
-                <div class="col-lg-4"><span>Servings: </span></div>
-                <div class="col-lg-4"><span>Calories: </span></div>
+                <div class="col-lg-4"><span id="prepTime">Prep Time: </span></div>
+                <div class="col-lg-4"><span id="cookTime">Cook Time: </span></div>
+                <div class="col-lg-4"><span id="totalTime">Total Time: </span></div>
+                <div class="col-lg-4"><span id="servings">Servings: </span></div>
+                <div class="col-lg-4"><span id="calories">Calories: </span></div>
             </div>
 
             <div class="ingredients-row row">
@@ -100,17 +99,13 @@
         </div>
       
     </div>
-
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    <!-- Load Sidebars -->
-    <script src="../../global/js/banner.js"></script>
-    <script src="../../global/js/bannerCollapse.js"></script>
-
-    <!-- Load Page Logic -->
-    <script src="./recipe.js"></script>
 </body>
+
+<!-- Load Sidebars -->
+<script src="../../global/js/banner.js"></script>
+<script src="../../global/js/bannerCollapse.js"></script>
+
+<!-- Load Page Logic -->
+<script src="./recipe.js"></script>
 
 </html>
