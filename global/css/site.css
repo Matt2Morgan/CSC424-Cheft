@@ -52,13 +52,22 @@ overflow: hidden;
   border-top: none;
   border-left: none;
   border-right: none;
-  background-color: #ffe97f;
+  background-color: white;
+  color: #446948;
 }
 
-.sticky {
-  position: fixed;
-  top: 20px;
-  height: 73px;
+.Navbar a {
+  float: none;
+  color: #446948;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-row {
+  padding: 10px;
+  margin: 0;
+  justify-content: space-between;
 }
 
 /* The dropdown container */
@@ -68,11 +77,15 @@ overflow: hidden;
 }
 
 /* Dropdown button */
-.nav-dropdown .nav-dropbtn {
+.nav-dropdown .nav-dropbtn, .nav-btn {
+  width: 100%;
+  padding: 0;
   font-size: 16px;
-  border: none;
+  border: solid;
+  border-width: 1px;
+  border-color: #446948;
   outline: none;
-  color: white;
+  color: #446948;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
@@ -84,7 +97,7 @@ overflow: hidden;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  width: calc(100% - 30px);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -92,7 +105,7 @@ overflow: hidden;
 /* Links inside the dropdown */
 .nav-dropdown-content a {
   float: none;
-  color: black;
+  color: #446948;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -116,9 +129,9 @@ float: left;
 position: fixed;
 width: 300px;
 height: 100vh;
-background-color: #446948;
+background-color: white;
 z-index: 9;
-color: black;
+color: #446948;
 }
 
 .Sidebar a {
@@ -179,6 +192,7 @@ padding: 20px;
 .collapsible {
   background-color: transparent;
   cursor: pointer;
+  color: #446948;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -215,7 +229,7 @@ button:focus.collapsible {
 
 .collapsible:after {
   content: '\002B';
-  color: white;
+  color: #446948;
   font-weight: bold;
   float: right;
   margin-left: 5px;
@@ -251,7 +265,8 @@ ul.collapse-content-list {
   border-bottom: none;
   border-right: none;
   border-width: 2px;
-  background-color: #446948;
+  color: #446948;
+  background-color: white;
   border-bottom-right-radius: 100px;
   border-top-right-radius: 100px;
   justify-content: center;
@@ -270,7 +285,7 @@ ul.collapse-content-list {
 }
 
 .collapse-sidebar-button:hover {
-  background-color: #2B502F;
+  background-color: #779C7B;
 }
 
 .collapse-sidebar-button:focus{
@@ -288,7 +303,7 @@ ul.collapse-content-list {
 .profile-icon {
   border: solid;
   border-width: 2px;
-  border-color: black;
+  border-color: #446948;
   border-radius: 10px;
   height: 50px;
   width: 50px;

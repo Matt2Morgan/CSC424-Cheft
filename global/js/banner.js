@@ -7,17 +7,46 @@
 if(document.getElementById("Navbar") != null) {
     document.getElementById("Navbar").innerHTML+=`
     <div class="nav-row row">
-        <div class="col-2"><a href="">Home</a></div>
-        <div class="col-2"><a href="">Home</a></div>
-        <div class="col-2"><a href="">Home</a></div>
-        <div class="col-2"><a href="">Home</a></div>
-        <div class="col-2"><div class="nav-dropdown">
-            <button class="nav-dropbtn">Dropdown
-            </button>
-            <div class="nav-dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+        <div class="col-2">
+            <div class="nav-btn">
+                <a href="../index/index.html">Home</a>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="nav-dropdown">
+                <button class="nav-dropbtn"> Recipes</button>
+                <div class="nav-dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="nav-dropdown">
+                <button class="nav-dropbtn"> Whats for Dinner?</button>
+                <div class="nav-dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="nav-dropdown">
+                <button class="nav-dropbtn"> Make Cooking Easy!</button>
+                <div class="nav-dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="nav-dropdown">
+                <div class="nav-btn">
+                    <a href="#">About Us</a>
+                </div>
             </div>
         </div>
     </div>
@@ -56,11 +85,11 @@ if(document.getElementById("Sidebar") != null){
         <button type="button" class="collapsible">Your Recipes</button>
         <div class="collapse-content">
             <ul class="collapse-content-list">
-                <li><a href="recipe.html?rid=1">Recipe 1</a></li>
-                <li><a href="recipe.html?rid=2">Recipe 2</a></li>
-                <li><a href="recipe.html?rid=3">Recipe 3</a></li>
-                <li><a href="recipe.html?rid=4">Recipe 4</a></li>
-                <li><a href="recipe.html?rid=5">Recipe 5</a></li>
+                <li><a href="../recipes/recipe.html?rid=1">Recipe 1</a></li>
+                <li><a href="../recipes/recipe.html?rid=2">Recipe 2</a></li>
+                <li><a href="../recipes/recipe.html?rid=3">Recipe 3</a></li>
+                <li><a href="../recipes/recipe.html?rid=4">Recipe 4</a></li>
+                <li><a href="../recipes/recipe.html?rid=5">Recipe 5</a></li>
                 <li><a href="temp.html">Show More</a></li>
             </ul>
         </div>

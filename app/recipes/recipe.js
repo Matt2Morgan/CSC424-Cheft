@@ -18,7 +18,7 @@ $( document ).ready(function() {
         $("#totalTime").append(totalTime);
         $("#servings").append("NA");
         $("#calories").append(returnArr[4]);
-        $("imagePath").append(returnArr[5]);
+        $("#imagePath").append(returnArr[5]);
         }
     })
 });
