@@ -1,0 +1,9 @@
+//FROM 3/24/22
+Work on getPage, and updateRec
+Add Create Recipe HTML and insert row - For right now put recipes on homepage to keep page count down
+Add Search function
+
+//PRESENTATION DATE 3/28/22
+
+Plan recipe img storage and retrieval methods
+Plan out login features

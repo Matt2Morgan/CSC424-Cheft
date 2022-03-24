@@ -9,7 +9,7 @@ if(document.getElementById("Navbar") != null) {
     <div class="nav-row row">
         <div class="col-2">
             <div class="nav-btn">
-                <a href="index.html">Home</a>
+                <a href="../index/index.html">Home</a>
             </div>
         </div>
         <div class="col-2">
