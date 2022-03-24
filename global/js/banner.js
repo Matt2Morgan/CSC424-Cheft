@@ -9,7 +9,7 @@ if(document.getElementById("Navbar") != null) {
     <div class="nav-row row">
         <div class="col-2">
             <div class="nav-btn">
-                <a href="../index/index.html">Home</a>
+                <a href="index.html">Home</a>
             </div>
         </div>
         <div class="col-2">
@@ -32,21 +32,17 @@ if(document.getElementById("Navbar") != null) {
                 </div>
             </div>
         </div>
-        <div class="col-3">
-            <div class="nav-dropdown">
-                <button class="nav-dropbtn"> Make Cooking Easy!</button>
-                <div class="nav-dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
         <div class="col-2">
             <div class="nav-dropdown">
                 <div class="nav-btn">
                     <a href="#">About Us</a>
                 </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="nav-btn">
+                <input type="search" id="nav-search" placeholder="Search..."> 
+                <button type="button" id="nav-search-submit">Go</button>
             </div>
         </div>
     </div>

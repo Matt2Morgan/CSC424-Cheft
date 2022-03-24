@@ -52,6 +52,7 @@ overflow: hidden;
   border-top: none;
   border-left: none;
   border-right: none;
+  border-width: 2px;
   background-color: white;
   color: #446948;
 }
@@ -82,7 +83,8 @@ overflow: hidden;
   padding: 0;
   font-size: 16px;
   border: solid;
-  border-width: 1px;
+  border-width: 2px;
+  border-radius: 10px;
   border-color: #446948;
   outline: none;
   color: #446948;
@@ -90,6 +92,39 @@ overflow: hidden;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.nav-btn a {
+  text-align: center;
+}
+
+.nav-btn input {
+  width: 77%;
+  font-size: 12px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: #2B502F;
+}
+
+.nav-btn button {
+  width: 20%;
+  font-size: 12px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: #2B502F;
+  background-color: white;
+}
+
+.nav-btn button:hover {
+  background-color: #779C7B;
+}
+
+.nav-btn button:focus {
+  background-color: #779C7B;
+  border-style: solid;
+  border-color: #2B502F;
 }
 
 /* Dropdown content (hidden by default) */
@@ -197,6 +232,7 @@ padding: 20px;
   border-left: none;
   border-right: none;
   border-bottom: solid;
+  border-width: 2px;
   width: 100%;
   outline: none;
   text-align: left;
@@ -296,6 +332,7 @@ ul.collapse-content-list {
   justify-content: left;
   align-items: center;
   border-bottom: solid;
+  border-width: 2px;
   margin-bottom: 10px;
   height: 73px;
 }
@@ -331,12 +368,14 @@ ul.collapse-content-list {
 
 .add-menu {
   border-bottom: solid;
+  border-width: 2px;
   height: 49px;
 }
 
 .logout-menu {
   border-bottom: solid;
   border-top: solid;
+  border-width: 2px;
   height: 49px;
 }
 
