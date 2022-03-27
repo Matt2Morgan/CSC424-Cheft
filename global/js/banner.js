@@ -1,4 +1,10 @@
-//banner.js
+//banner.jS
+
+function navbarSearch() {
+    var search = document.getElementById("nav-search").value;
+    window.location.href = "../recipes/recipes.html?search=" + search;
+}
+
 
 ////////////////
 /////Navbar/////
@@ -16,7 +22,7 @@ if(document.getElementById("Navbar") != null) {
             <div class="nav-dropdown">
                 <button class="nav-dropbtn"> Recipes</button>
                 <div class="nav-dropdown-content">
-                    <a href="#">Link 1</a>
+                    <a href="../recipes/recipes.html">All Recipes</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
                 </div>
@@ -42,7 +48,7 @@ if(document.getElementById("Navbar") != null) {
         <div class="col-3">
             <div class="nav-btn">
                 <input type="search" id="nav-search" placeholder="Search..."> 
-                <button type="button" id="nav-search-submit">Go</button>
+                <button type="button" onclick="navbarSearch()" id="nav-search-submit">Go</button>
             </div>
         </div>
     </div>
@@ -69,7 +75,7 @@ if(document.getElementById("Sidebar") != null){
         </div>
 
         <div id="add-menu" class="col-12 add-menu" style="padding: 0;">
-            <a class="add-button" href="addrecipe.html">
+            <a class="add-button" href="../recipes/addrecipe.html">
                 <span> Add Recipe + </span>
             </a>
         </div>
@@ -86,7 +92,7 @@ if(document.getElementById("Sidebar") != null){
                 <li><a href="../recipes/recipe.html?rid=3">Recipe 3</a></li>
                 <li><a href="../recipes/recipe.html?rid=4">Recipe 4</a></li>
                 <li><a href="../recipes/recipe.html?rid=5">Recipe 5</a></li>
-                <li><a href="temp.html">Show More</a></li>
+                <li><a href="../recipes/recipes.html">Show More</a></li>
             </ul>
         </div>
 

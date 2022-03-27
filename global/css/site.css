@@ -157,6 +157,10 @@ overflow: hidden;
   display: block;
 }
 
+.nav-dropdown-content:hover {
+  display: block;
+}
+
 
 /* Sidebar Stylings */
 .Sidebar {

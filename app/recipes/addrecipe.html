@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Load Style Sheets-->
-    <link rel="stylesheet" href="./recipes.css">
+    <link rel="stylesheet" href="./addrecipe.css">
     <link rel="stylesheet" href="../../global/css/site.css">
     
 
@@ -35,9 +35,16 @@
         <!-- Begining of page content this is the content that will be edited between pages -->
         <div class="content">
             <div class="Navbar" id="Navbar"></div>
-            <div id="returnTable">
-                
+
+            <div class="add-recipe-form">
+                <input type="text" id="recipe-title" placeholder="Recipe Title">
+                <input type="text" id="author-name" placeholder="Author Name">
+                <input type="number" id="prep-time" placeholder="Prep Time (in hours)">
+                <input type="number" id="cook-time" placeholder="Cook Time (in hours)">
+                <input type="number" id="calories" placeholder="Calories">
+                <button type="button" onclick="submit_recipe()" id="add-recipe-btn"> Submit </button>
             </div>
+            
         </div>
       
     </div>
@@ -48,6 +55,6 @@
 <script src="../../global/js/bannerCollapse.js"></script>
 
 <!-- Load Page Logic -->
-<script src="./recipes.js"></script>
+<script src="./addrecipe.js"></script>
 
 </html>
