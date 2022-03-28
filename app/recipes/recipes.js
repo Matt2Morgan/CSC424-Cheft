@@ -1,14 +1,18 @@
-//Recipes GetPage
+// recipe GetPage
 
+
+// Runs on page load
 $( document ).ready(function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
+    //Get search query from url
     const search = urlParams.get('search');
 
-
+    //POST to getPage php script, format return and then add formatted html to document.
     $.ajax({url:"recipes.php",
             type: 'post',
+            //Add search to POST
             data: { "search": search},
      success:function(result){
         const returnArr = result.split("@");

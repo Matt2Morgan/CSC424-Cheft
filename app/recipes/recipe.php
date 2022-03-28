@@ -10,10 +10,12 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+//Get data from POST
 $post = (object) $_POST;
 
 $rid = $post->rid;
 
+//Initialize Global Variables
 $_data_user = "";
 $_data_recname = "";
 $_data_preptime = "";
@@ -21,7 +23,7 @@ $_data_cooktime = "";
 $_data_calories = "";
 $_data_imagepath = "";
 
-
+//Enter query and format return
 $sql = "SELECT username, recipename, preptime, cooktime, calories, imagepath FROM recipes WHERE recipeID = $rid";
 $result = $conn->query($sql);
 

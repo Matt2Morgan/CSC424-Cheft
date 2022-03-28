@@ -1,12 +1,18 @@
+// recipe getRec
+
+
+// Runs on page load
 $( document ).ready(function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
+    // Get recipe ID from url
     const rid = urlParams.get('rid');
 
-
+    //POST to getRec php script, format return and then append strings to html objects.
     $.ajax({url:"recipe.php",
             type: 'post',
+            //Add rid to POST
             data: { "rid": rid},
      success:function(result){
         const returnArr = result.split("|");

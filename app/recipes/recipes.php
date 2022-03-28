@@ -10,10 +10,12 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+//Get data from POST
 $post = (object) $_POST;
 
 $search = $post->search;
 
+//Initialize Global Variables
 $_data_recipeID = "";
 $_data_user = "";
 $_data_recname = "";
@@ -21,7 +23,7 @@ $_data_imagepath = "";
 
 $return_array = "";
 
-
+//Enter query and format return
 $sql = "SELECT recipeID, username, recipename, imagepath FROM recipes WHERE username LIKE '%$search%' OR recipename LIKE '%$search%'";
 $result = $conn->query($sql);
 if ($result) {
