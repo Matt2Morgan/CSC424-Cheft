@@ -19,7 +19,7 @@ $cook_time = $post->cook_time;
 $calories = $post->calories;
 
 
-$sql = "INSERT INTO recipes(`username`, `recipename`, `preptime`, `cooktime`, `calories`) VALUES('$recipe_title', '$author_name', '$prep_time', '$cook_time', '$calories')";
+$sql = "INSERT INTO recipes(`username`, `recipename`, `preptime`, `cooktime`, `calories`) VALUES('$author_name', '$recipe_title', '$prep_time', '$cook_time', '$calories')";
 $result = $conn->query($sql);
 if ($result) {
     echo "Success";

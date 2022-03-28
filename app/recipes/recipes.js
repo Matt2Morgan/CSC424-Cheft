@@ -1,3 +1,5 @@
+//Recipes GetPage
+
 $( document ).ready(function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -16,19 +18,21 @@ $( document ).ready(function() {
 
             if(document.getElementById("returnTable") != null){
                 document.getElementById("returnTable").innerHTML+=`
-                <div class="row no-gutters">
-                    <div class="col-sm-2">
-                        <img src="../..${temp[2]}" width="100px" height="100px">
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="widget-entry">
-                            <span style="font-size: 24px;">${temp[1]}</span>
-                            <span style="font-size: 16px;">Author: ${temp[0]}</span>
-                            <span style="font-size: 12px;">Tags: ${temp[0]}</span>
-                            <span style="font-size: 12px;"><span>Views: ${temp[0]}</span> <span>Date: ${temp[0]}</span></span>
+                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                    <div class="row no-gutters">
+                        <div class="col-sm-2">
+                            <img src="../..${temp[3]}" width="100px" height="100px">
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="widget-entry">
+                                <span style="font-size: 24px;">${temp[2]}</span>
+                                <span style="font-size: 16px;">Author: ${temp[1]}</span>
+                                <span style="font-size: 12px;">Tags: ${temp[0]}</span>
+                                <span style="font-size: 12px;"><span>Views: ${temp[0]}</span> <span>Date: ${temp[0]}</span></span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             `}
         }
         }
