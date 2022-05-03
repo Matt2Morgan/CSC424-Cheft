@@ -1,4 +1,3 @@
-Fix Show more for recipes and following
 Implement favorite and follow methods
 Redo Recipe Database and Front End
 

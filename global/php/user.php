@@ -11,6 +11,7 @@ if ($conn->connect_error) {
 }
 
 $return_username = "";
+$return_recipes = "";
 $return_favorites = "";
 $return_follows = "";
 
@@ -27,6 +28,24 @@ if ($result) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
           $return_username = $row["username"];
+        }
+    }
+} else { 
+    echo "Error in ".$query."
+    ".$db->error; 
+}
+
+//RECIPES
+$sql = "SELECT `recipeID` FROM `recipes` WHERE '$UID' = `AID`";
+$result = $conn->query($sql);
+if ($result) {
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          $returnRID = $row["recipeID"];
+          $return = $returnRID."|";
+      
+          $return_recipes = $return_recipes.$return;
         }
     }
 } else { 
@@ -70,7 +89,7 @@ if ($result) {
     ".$db->error; 
 }
 
-echo $return_username."@".$return_favorites."@".$return_follows;
+echo $return_username."@".$return_recipes."@".$return_favorites."@".$return_follows;
 
 $conn->close();
 ?>

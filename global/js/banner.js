@@ -47,7 +47,7 @@ if(document.getElementById("Navbar") != null) {
         </div>
         <div class="col-3">
             <div class="nav-btn">
-                <input type="search" id="nav-search" placeholder="Search..."> 
+                <input type="search" id="nav-search" placeholder="Search Recipes..."> 
                 <button type="button" onclick="navbarSearch()" id="nav-search-submit">Go</button>
             </div>
         </div>
@@ -86,13 +86,8 @@ if(document.getElementById("Sidebar") != null){
         <div id="dropdown-menu" class="col-12 dropdown-menu-custom" style="padding: 0;">
         <button type="button" class="collapsible">Your Recipes</button>
         <div class="collapse-content">
-            <ul class="collapse-content-list">
-                <li><a href="../recipes/recipe.html?rid=1">Recipe 1</a></li>
-                <li><a href="../recipes/recipe.html?rid=2">Recipe 2</a></li>
-                <li><a href="../recipes/recipe.html?rid=3">Recipe 3</a></li>
-                <li><a href="../recipes/recipe.html?rid=4">Recipe 4</a></li>
-                <li><a href="../recipes/recipe.html?rid=5">Recipe 5</a></li>
-                <li><a href="../recipes/recipes.html">Show More</a></li>
+            <ul id="recipe-list" class="collapse-content-list">
+
             </ul>
         </div>
 

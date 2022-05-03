@@ -40,29 +40,72 @@ $( document ).ready(function() {
                 `;
             }
 
-            const returnFavorites = info[1].split("|");
+            const returnRecipes = info[1].split("|");
+            if(document.getElementById("recipe-list") != null) {
+                if (returnRecipes.length - 1 <= 5){
+                    for (let i = 0; i < returnRecipes.length - 1; i++)
+                    {
+                        document.getElementById("recipe-list").innerHTML+=`
+                            <li><a href="../recipes/recipe.html?rid=${returnRecipes[i]}">${returnRecipes[i]}</a></li>
+                        `;
+                    }
+                }
+                else{
+                    for (let i = 0; i < 5; i++)
+                    {
+                        document.getElementById("recipe-list").innerHTML+=`
+                            <li><a href="../recipes/recipe.html?rid=${returnRecipes[i]}">${returnRecipes[i]}</a></li>
+                        `;
+                    }
+                }
+                document.getElementById("recipe-list").innerHTML+=`
+                <li><a href="../recipes/recipes.html?AID=${localStorage.getItem("UID")}">Show More</a></li>
+                `;
+            };
+
+            const returnFavorites = info[2].split("|");
             if(document.getElementById("favorite-list") != null) {
-                for (let i = 0; i < returnFavorites.length - 1; i++)
+                if (returnFavorites.length - 1 <= 5){
+                    for (let i = 0; i < returnFavorites.length - 1; i++)
                 {
                     document.getElementById("favorite-list").innerHTML+=`
                         <li><a href="../recipes/recipe.html?rid=${returnFavorites[i]}">${returnFavorites[i]}</a></li>
                     `;
                 }
+                }
+                else{
+                    for (let i = 0; i < 5; i++)
+                {
+                    document.getElementById("favorite-list").innerHTML+=`
+                        <li><a href="../recipes/recipe.html?rid=${returnFavorites[i]}">${returnFavorites[i]}</a></li>
+                    `;
+                }
+                }
                 document.getElementById("favorite-list").innerHTML+=`
-                <li><a href="../recipes/recipes.html">Show More</a></li>
+                <li><a href="../recipes/recipes.html?FID=${localStorage.getItem("UID")}">Show More</a></li>
                 `;
             };
 
-            const returnFollows = info[2].split("|");
+            const returnFollows = info[3].split("|");
             if(document.getElementById("follow-list") != null) {
-                for (let i = 0; i < returnFollows.length - 1; i++)
+                if (returnFollows.length - 1 <= 5){
+                    for (let i = 0; i < returnFollows.length - 1; i++)
                 {
                     document.getElementById("follow-list").innerHTML+=`
                         <li><a href="../profiles/profile.html?UID=${returnFollows[i]}">${returnFollows[i]}</a></li>
                     `;
                 }
+                }
+                else{
+                    for (let i = 0; i < 5; i++)
+                {
+                    document.getElementById("follow-list").innerHTML+=`
+                        <li><a href="../profiles/profile.html?UID=${returnFollows[i]}">${returnFollows[i]}</a></li>
+                    `;
+                }
+                }
                 document.getElementById("follow-list").innerHTML+=`
-                <li><a href="../profiles/profiles.html">Show More</a></li>
+                <li><a href="../profiles/profiles.html?UID=${localStorage.getItem("UID")}">Show More</a></li>
                 `;
             };
             }

@@ -8,31 +8,33 @@ $( document ).ready(function() {
 
     //Get search query from url
     const search = urlParams.get('search');
+    const UID = urlParams.get('UID');
 
     //POST to getPage php script, format return and then add formatted html to document.
-    $.ajax({url:"recipes.php",
+    $.ajax({url:"profiles.php",
             type: 'post',
             //Add search to POST
-            data: { "search": search},
+            data: { "search": search,
+                    "UID": UID},
      success:function(result){
-        const returnArr = result.split("@");
+        const returnArr = result.split("~");
         for (i = 0; i < returnArr.length - 1; i++)
         {
-            let temp = returnArr[i].split("|");
+            let info = returnArr[i].split("|");
 
             if(document.getElementById("returnTable") != null){
                 document.getElementById("returnTable").innerHTML+=`
-                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                <a href="../profiles/profile.html?UID=${info[0]}">
                     <div class="row no-gutters">
                         <div class="col-sm-2">
-                            <img src="../..${temp[3]}" width="100px" height="100px">
+                            <img src="../..${info[3]}" width="100px" height="100px">
                         </div>
                         <div class="col-sm-10">
                             <div class="widget-entry">
-                                <span style="font-size: 24px;">${temp[2]}</span>
-                                <span style="font-size: 16px;">Author: ${temp[1]}</span>
-                                <span style="font-size: 12px;">Tags: ${temp[0]}</span>
-                                <span style="font-size: 12px;"><span>Views: ${temp[0]}</span> <span>Date: ${temp[0]}</span></span>
+                                <span style="font-size: 24px;">${info[2]}</span>
+                                <span style="font-size: 16px;">Username: ${info[1]}</span>
+                                <span style="font-size: 12px;">Email: ${info[3]}</span>
+                                <span style="font-size: 12px;"><span>Followers: ${info[0]}</span> <span>Following: ${info[0]}</span></span>
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,30 @@ if ($conn->connect_error) {
 $post = (object) $_POST;
 
 $search = $post->search;
+$AID = $post->AID;
+$FID = $post->FID;
+
+if (!empty($search))
+{
+  $AID = 0;
+  $FID = 0;
+}
+else if (is_numeric($AID))
+{
+  $search = "XZXZXZXZXZXZXZX";
+  $FID = 0;
+}
+else if (is_numeric($FID))
+{
+  $search = "XZXZXZXZXZXZXZX";
+  $AID = 0;
+}
+else
+{
+  $search = "";
+  $AID = 0;
+  $FID = 0;
+}
 
 //Initialize Global Variables
 $_data_recipeID = "";
@@ -24,7 +48,7 @@ $_data_imagepath = "";
 $return_array = "";
 
 //Enter query and format return
-$sql = "SELECT recipeID, username, recipename, imagepath FROM recipes WHERE username LIKE '%$search%' OR recipename LIKE '%$search%'";
+$sql = "SELECT recipeID, username, recipename, imagepath FROM recipes WHERE `recipeID` = (SELECT `RID` FROM `favorites` WHERE `UID` = $FID) OR `AID` = '$AID' OR username LIKE '%$search%' OR recipename LIKE '%$search%'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {

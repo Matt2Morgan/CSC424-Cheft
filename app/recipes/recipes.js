@@ -8,12 +8,16 @@ $( document ).ready(function() {
 
     //Get search query from url
     const search = urlParams.get('search');
+    const AID = urlParams.get('AID');
+    const FID = urlParams.get('FID');
 
     //POST to getPage php script, format return and then add formatted html to document.
     $.ajax({url:"recipes.php",
             type: 'post',
             //Add search to POST
-            data: { "search": search},
+            data: { "search": search,
+                    "AID": AID,
+                    "FID": FID},
      success:function(result){
         const returnArr = result.split("@");
         for (i = 0; i < returnArr.length - 1; i++)
