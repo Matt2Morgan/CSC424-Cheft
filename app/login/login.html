@@ -10,8 +10,9 @@
     <meta name="author" content="Group 3">
     <meta name="description" content="Cooking with some theft!">
     <meta name="keywords" content="Cooking Recipe Social Media" />
-    <meta name="robots" content="RECIPE,FOLLOW">
-
+    <meta name="robots" content="LOGIN,FOLLOW">
+    
+    
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -20,44 +21,44 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Load Style Sheets-->
-    <link rel="stylesheet" href="./addrecipe.css">
+    <link rel="stylesheet" href="./login.css">
     <link rel="stylesheet" href="../../global/css/site.css">
     
 
 </head>
 
 <body>
+    <!-- Ive only commented the first widget as the rest is just repeated, please let me know if you have any questions-->
+    <!-- Ive also added some whitespace to break things down in a more readable way-->
     <div class="main">
 
         <!-- This is the div that will be imported from the javascript file "../../global/js/banner.js" -->
         <div class="Sidebar" id="Sidebar"></div>
 
         <!-- Begining of page content this is the content that will be edited between pages -->
-        <div class="content">
+        <div class="content" id="content">
             <div class="Navbar" id="Navbar"></div>
 
-            <div class="add-recipe-form">
-                <input type="text" id="recipe-title" placeholder="Recipe Title">
-                <input type="text" id="author-name" placeholder="Author Name">
-                <input type="number" id="prep-time" placeholder="Prep Time (in hours)">
-                <input type="number" id="cook-time" placeholder="Cook Time (in hours)">
-                <input type="number" id="calories" placeholder="Calories">
-                <button type="button" onclick="submit_recipe()" id="add-recipe-btn"> Submit </button>
+            <div class="lsi-row row">
+                <div class="lsi-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Username">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <button type="button" onclick="phpLogin()">Login</button>
+                </div>
             </div>
             
         </div>
-      
     </div>
+    
+    <!-- Load Sidebars -->
+    <script src="../../global/js/banner.js"></script>
+    <script src="../../global/js/bannerCollapse.js"></script>
+
+    <!-- Load Login -->
+    <script src="../../global/js/user.js"></script>
+
+    <!-- Load Page Logic -->
+    <script src="./login.js"></script>
 </body>
-
-<!-- Load Sidebars -->
-<script src="../../global/js/banner.js"></script>
-<script src="../../global/js/bannerCollapse.js"></script>
-
-<!-- Load Login -->
-<script src="../../global/js/user.js"></script>
-
-<!-- Load Page Logic -->
-<script src="./addrecipe.js"></script>
 
 </html>

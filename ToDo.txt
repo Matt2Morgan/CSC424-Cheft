@@ -1,8 +1,8 @@
-//PRESENTATION DATE 3/28/22
+Fix Show more for recipes and following
+Implement favorite and follow methods
+Redo Recipe Database and Front End
+
 
 Keep searchbar entry on page reload
 Add redirect to add-recipe
 Plan recipe img storage and retrieval methods
-Plan out login features
-
-//Meeting on 3/30/22

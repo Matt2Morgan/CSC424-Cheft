@@ -10,7 +10,7 @@
     <meta name="author" content="Group 3">
     <meta name="description" content="Cooking with some theft!">
     <meta name="keywords" content="Cooking Recipe Social Media" />
-    <meta name="robots" content="RECIPE,FOLLOW">
+    <meta name="robots" content="PROFILE,FOLLOW">
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Load Style Sheets-->
-    <link rel="stylesheet" href="./addrecipe.css">
+    <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="../../global/css/site.css">
     
 
@@ -35,16 +35,11 @@
         <!-- Begining of page content this is the content that will be edited between pages -->
         <div class="content">
             <div class="Navbar" id="Navbar"></div>
-
-            <div class="add-recipe-form">
-                <input type="text" id="recipe-title" placeholder="Recipe Title">
-                <input type="text" id="author-name" placeholder="Author Name">
-                <input type="number" id="prep-time" placeholder="Prep Time (in hours)">
-                <input type="number" id="cook-time" placeholder="Cook Time (in hours)">
-                <input type="number" id="calories" placeholder="Calories">
-                <button type="button" onclick="submit_recipe()" id="add-recipe-btn"> Submit </button>
+            <div class="header-row row">
+                <h1 id="name"></h1>
+                <h3 id="username"> Username: </h3>
+                <h3 id="email"> Email: </h3>
             </div>
-            
         </div>
       
     </div>
@@ -58,6 +53,6 @@
 <script src="../../global/js/user.js"></script>
 
 <!-- Load Page Logic -->
-<script src="./addrecipe.js"></script>
+<script src="./profile.js"></script>
 
 </html>

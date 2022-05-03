@@ -388,16 +388,20 @@ ul.collapse-content-list {
 }
 
 .add-button {
+  all: unset;
   width: 100%;
-  color: black;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.add-button span {
+.add-button {
   font-size: 24px;
+}
+
+.add-button:focus {
+  outline: none;
 }
 
 .dropdown-menu-custom {

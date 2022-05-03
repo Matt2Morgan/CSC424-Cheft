@@ -70,7 +70,7 @@ if(document.getElementById("Sidebar") != null){
 
             </div>
             <div class="profile-name">
-                <span id="user-name">Profile</span>
+                <span id="user-name"></span>
             </div>
         </div>
 
@@ -98,13 +98,8 @@ if(document.getElementById("Sidebar") != null){
 
         <button type="button" class="collapsible">Favorite Recipes</button>
         <div class="collapse-content">
-            <ul class="collapse-content-list">
-                <li><a href="temp.html">Recipe</a></li>
-                <li><a href="temp.html">Recipe</a></li>
-                <li><a href="temp.html">Recipe</a></li>
-                <li><a href="temp.html">Recipe</a></li>
-                <li><a href="temp.html">Recipe</a></li>
-                <li><a href="temp.html">Show More</a></li>
+            <ul id="favorite-list" class="collapse-content-list">
+
             </ul>
         </div>
 
@@ -134,13 +129,8 @@ if(document.getElementById("Sidebar") != null){
 
         <button type="button" class="collapsible">Following</button>
         <div class="collapse-content">
-            <ul class="collapse-content-list">
-                <li><a href="temp.html">Person</a></li>
-                <li><a href="temp.html">Person</a></li>
-                <li><a href="temp.html">Person</a></li>
-                <li><a href="temp.html">Person</a></li>
-                <li><a href="temp.html">Person</a></li>
-                <li><a href="temp.html">Show More</a></li>
+            <ul id="follow-list" class="collapse-content-list">
+                
             </ul>
         </div>
             
@@ -150,13 +140,11 @@ if(document.getElementById("Sidebar") != null){
 
     <div id="bottom-menu" class="bottom-menu row">
         <div id="logout-menu" class="col-12 logout-menu" style="padding: 0;">
-            <a class="add-button" href="addrecipe.html">
-                <span> Logout </span>
-            </a>
+            <button class="add-button" id="logButton" onclick="phpLogFunc()"></button>
         </div>
     
         <div id="help-menu" class="col-12 help-menu" style="padding: 0;">
-            <a class="add-button" href="addrecipe.html">
+            <a class="add-button" href="../misc/help.html">
                 <span> Help </span>
             </a>
         </div>
