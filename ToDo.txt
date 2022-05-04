@@ -11,17 +11,22 @@ Keep Searchbar consistency
 Future Goals:
 Implement Basic Routing and File Pathing methods
 Refine Login System With Encryption and Sessions Table in Database
+Recipe Folder System
 
 
 5/4 Planned Tasks:
-Tags Feature
 Searchbars
 Favorite and Follow Buttons
+Tags Feature
 Recipe links
 
 5/5 Planned Tasks:
+Add User Recipes to User Page
+Add Follower and Following Count and List to User Page
+Finish what wasnt finished on 5/4
+
+5/6 Planned Tasks:
 Add Styling to All Pages
 Attempt Picture Storage and Retrieval
-Finish what wasnt finished on 5/4
 
 
