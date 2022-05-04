@@ -16,13 +16,13 @@ $post = (object) $_POST;
 $search = $post->search;
 $UID = $post->UID;
 
-if (empty($search) and is_numeric($UID))
+if (!empty($search))
 {
-    $search = "XZXZXZXZXZXZXZX";
+    $UID= 0;
 }
 else
 {
-    $UID = 0;
+    $search = "XZXZXZXZXZXZXZX";
 }
 
 $_return_array = "";
@@ -44,7 +44,7 @@ if ($result) {
         }
     } else {
       echo "0 results";
-      }
+    }
 } else { 
     echo "Error in ".$query."
     ".$db->error; 

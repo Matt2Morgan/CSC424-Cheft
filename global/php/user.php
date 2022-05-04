@@ -21,7 +21,7 @@ $post = (object) $_POST;
 $UID = $post->UID;
 
 //USER INFO
-$sql = "SELECT `username` FROM `users` WHERE '$UID' = `UID`";
+$sql = "SELECT `username` FROM `users` WHERE `UID` = '$UID'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
@@ -36,16 +36,17 @@ if ($result) {
 }
 
 //RECIPES
-$sql = "SELECT `recipeID` FROM `recipes` WHERE '$UID' = `AID`";
+$sql = "SELECT `recipename`, `recipeID` FROM `recipes` WHERE `AID` = '$UID'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
+          $returnRecipeName = $row["recipename"];
           $returnRID = $row["recipeID"];
-          $return = $returnRID."|";
+          $return = $returnRecipeName."|".$returnRID;
       
-          $return_recipes = $return_recipes.$return;
+          $return_recipes = $return_recipes.$return.'~';
         }
     }
 } else { 
@@ -54,16 +55,17 @@ if ($result) {
 }
 
 //FAVORITES
-$sql = "SELECT `RID` FROM `favorites` WHERE '$UID' = `UID`";
+$sql = "SELECT `recipename`, `recipeID` FROM `recipes` WHERE `recipeID` = (SELECT `RID` FROM `favorites` WHERE `UID` = '$UID')";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          $returnRID = $row["RID"];
-          $return = $returnRID."|";
+          $returnRecipeName = $row["recipename"];
+          $returnRID = $row["recipeID"];
+          $return = $returnRecipeName."|".$returnRID;
       
-          $return_favorites = $return_favorites.$return;
+          $return_favorites = $return_favorites.$return.'~';
         }
     }
 } else { 
@@ -72,16 +74,17 @@ if ($result) {
 }
 
 //FOLLOWS
-$sql = "SELECT `UID2` FROM `follows` WHERE '$UID' = `UID1`";
+$sql = "SELECT `username`, `UID` FROM `users` WHERE `UID` = (SELECT `UID2` FROM `follows` WHERE `UID1` = '$UID')";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-          $returnUID = $row["UID2"];
-          $return = $returnUID."|";
+          $returnUsername = $row["username"];
+          $returnUID = $row["UID"];
+          $return = $returnUsername."|".$returnUID;
       
-          $return_follows = $return_follows.$return;
+          $return_follows = $return_follows.$return.'~';
         }
     }
 } else { 

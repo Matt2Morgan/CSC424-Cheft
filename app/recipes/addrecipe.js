@@ -9,6 +9,7 @@ function submit_recipe() {
     var prep_time = document.getElementById("prep-time").value;
     var cook_time = document.getElementById("cook-time").value;
     var calories = document.getElementById("calories").value;
+    var AID = localStorage.getItem("UID");
 
     //POST to addRec php script, no return currently other than success or failure.
     $.ajax({url:"addrecipe.php",
@@ -18,9 +19,10 @@ function submit_recipe() {
                 "author_name": author_name, 
                 "prep_time": prep_time, 
                 "cook_time": cook_time,
-                "calories": calories},
+                "calories": calories,
+                "AID": AID},
      success:function(result){
-        alert(result);
+        window.location.href = `../recipes/recipe.html?rid=${result}`;
         }
     })
 }
