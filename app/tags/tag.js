@@ -32,7 +32,7 @@ $( document ).ready(function() {
         if (returnArr[2] === "1")
         {
             document.getElementById("btn-row").innerHTML+=`
-                <button type="button" onclick="deleteAccount()" id="delete-btn">Delete</button>
+                <button type="button" onclick="deleteTags()" id="delete-btn">Delete</button>
             `;
         }
         else
@@ -99,6 +99,17 @@ function favorite() {
                 document.getElementById("follow-btn").textContent="Unfavorite";
                 location.reload();
             }
+        }
+    })
+}
+
+function deleteTags() {
+    $.ajax({url:"delete.php",
+            type: 'post',
+            //Add rid to POSTs
+            data: { "TID": TID},
+     success:function(){
+            window.location.href = `../tags/tags.html?AID=${UID}`;
         }
     })
 }

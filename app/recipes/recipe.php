@@ -24,6 +24,7 @@ $_data_preptime = "";
 $_data_cooktime = "";
 $_data_calories = "";
 $_data_imagepath = "";
+$_data_tags = "";
 
 //Enter query and format return
 $sql = "SELECT AID, upload_date, views, recipename, preptime, cooktime, calories, imagepath FROM recipes WHERE recipeID = $rid";
@@ -59,7 +60,7 @@ $result = $conn->query($sql);
 $_data_favCnt = $result->num_rows;
 
 //Enter query and format return
-$sql = "SELECT * FROM favorites WHERE RID = $rid AND `UID` = $uid";
+$sql = "SELECT * FROM `favorites` WHERE `RID` = '$rid' AND `UID` = '$uid'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0)
@@ -80,9 +81,24 @@ else
   $_data_isUser = false;
 }
 
+//Enter query and format return
+$sql = "SELECT `TID`, `tag_name` FROM `tags` WHERE `TID` IN (SELECT `TID` FROM `tags_link` WHERE `RID` = '$rid')";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $_data_TID = $row["TID"];
+    $_data_tagname = $row["tag_name"];
+
+    $_data_tags = $_data_tags . $_data_TID . "@" . $_data_tagname . "~";
+  }
+} else {
+  echo "0 results";
+}
 
 //Return Values
-$return = $_data_user . "|" . $_data_AID . "|" . $_data_date . "|" . $_data_views . "|" . $_data_favCnt .  "|" . $_data_favBool . "|" . $_data_recname . "|" . $_data_preptime . "|" . $_data_cooktime . "|" . $_data_calories . "|" . $_data_imagepath . "|" . $_data_isUser;
+$return = $_data_user . "|" . $_data_AID . "|" . $_data_date . "|" . $_data_views . "|" . $_data_favCnt .  "|" . $_data_favBool . "|" . $_data_recname . "|" . $_data_preptime . "|" . $_data_cooktime . "|" . $_data_calories . "|" . $_data_imagepath . "|" . $_data_isUser . "|" . $_data_tags;
 
 echo $return;
 

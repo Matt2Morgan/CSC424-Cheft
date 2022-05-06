@@ -72,6 +72,20 @@ $( document ).ready(function() {
                 }
             }
         }
+
+        if(document.getElementById("tags") != null){
+            let tagRow = returnArr[12].split("~");
+
+            if(document.getElementById("tags") != null){
+                for (var i = 0; i < tagRow.length - 1; i++)
+                {
+                    let tagIndividual = tagRow[i].split("@");
+                    document.getElementById("tags").innerHTML+=`
+                    <div class="col-1"><a href="../tags/tag.html?TID=${tagIndividual[0]}" class="tag">${tagIndividual[1]}</a></div>
+                    `
+                }
+            }
+        }
         
         
         $("#recipeTitle").append(returnArr[6]);
