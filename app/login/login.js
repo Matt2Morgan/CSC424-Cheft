@@ -112,6 +112,7 @@ function phpSignup() {
                 "password": password},
      success:function(result){
         alert(result);
+        window.location.href = "../login/login.html";
         }
     })
 }

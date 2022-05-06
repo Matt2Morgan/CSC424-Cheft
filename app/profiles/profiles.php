@@ -36,7 +36,19 @@ if ($result) {
             $username = $row["username"];
             $name = $row["name"];
             $email = $row["email"];
-            $return = $returnUID . "|". $username . "|" . $name . "|" . $email;
+            //Enter query and format return
+            $sql1 = "SELECT * FROM `follows` WHERE `UID1` = '$returnUID'";
+            $result1 = $conn->query($sql1);
+
+            $_data_followingCnt = $result1->num_rows;
+
+            //Enter query and format return
+            $sql2 = "SELECT * FROM `follows` WHERE `UID2` = '$returnUID'";
+            $result2 = $conn->query($sql2);
+
+            $_data_followerCnt = $result2->num_rows;
+
+            $return = $returnUID . "|". $username . "|" . $name . "|" . $email . "|". $_data_followingCnt . "|". $_data_followerCnt;
       
             $_return_array = $_return_array . $return . "~";
         }

@@ -40,7 +40,7 @@ $( document ).ready(function() {
                                 <span style="font-size: 24px;">${info[2]}</span>
                                 <span style="font-size: 16px;">Username: ${info[1]}</span>
                                 <span style="font-size: 12px;">Email: ${info[3]}</span>
-                                <span style="font-size: 12px;"><span>Followers: ${info[0]}</span> <span>Following: ${info[0]}</span></span>
+                                <span style="font-size: 12px;"><span>Followers: ${info[5]}</span> <span>Following: ${info[4]}</span></span>
                             </div>
                         </div>
                     </div>
