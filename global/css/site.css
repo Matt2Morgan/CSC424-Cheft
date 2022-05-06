@@ -71,14 +71,8 @@ overflow: hidden;
   justify-content: space-between;
 }
 
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
 /* Dropdown button */
-.nav-dropdown .nav-dropbtn, .nav-btn {
+.nav-btn {
   width: 100%;
   padding: 0;
   font-size: 16px;
@@ -126,41 +120,6 @@ overflow: hidden;
   border-style: solid;
   border-color: #2B502F;
 }
-
-/* Dropdown content (hidden by default) */
-.nav-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: calc(100% - 30px);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.nav-dropdown-content a {
-  float: none;
-  color: #446948;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.nav-dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.nav-dropbtn:hover + .nav-dropdown-content {
-  display: block;
-}
-
-.nav-dropdown-content:hover {
-  display: block;
-}
-
 
 /* Sidebar Stylings */
 .Sidebar {
@@ -407,4 +366,40 @@ ul.collapse-content-list {
 .dropdown-menu-custom {
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+
+
+.widget-area
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.widget-wrapper
+{
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #E7E9EB;
+    margin-bottom: 20px;
+}
+
+.widget-header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E7E9EB;
+}
+
+.widget-body
+{
+    padding: 15px;
+}
+
+.widget-entry
+{
+    display: flex; 
+    flex-direction: column;
 }

@@ -1,14 +1,6 @@
 <?php
-$servername = '127.0.0.1';
-$username = 'root';
-$password = '';
-$dbname = 'cheft';
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$path = $_SERVER['DOCUMENT_ROOT']."/Cheft/global/php/connect.php";
+require $path;
 
 //Get data from POST
 $post = (object) $_POST;

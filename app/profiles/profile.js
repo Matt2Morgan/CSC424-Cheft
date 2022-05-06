@@ -23,10 +23,33 @@ $( document ).ready(function() {
                     "uid2": followedUID},
      success:function(result){
         const returnArr = result.split("|");
-        $("#username").append(returnArr[0]);
-        $("#name").append(returnArr[1]);
-        $("#email").append(returnArr[2]);
-        if (returnArr[4] === "1")
+        if(document.getElementById("name") != null){
+            document.getElementById("name").innerHTML+=`
+            <h1>${returnArr[1]}</h1>
+        `;
+        }
+        if(document.getElementById("username") != null){
+            document.getElementById("username").innerHTML+=`
+            <h2>Name: ${returnArr[0]}</h2>
+        `;
+        }
+        if(document.getElementById("email") != null){
+            document.getElementById("email").innerHTML+=`
+            <h2>Email: ${returnArr[2]}</h2>
+        `;
+        }
+        if(document.getElementById("followers") != null){
+            document.getElementById("followers").innerHTML+=`
+            <h4> Followers: ${returnArr[3]}</h4>
+        `;
+        }
+
+        if(document.getElementById("following") != null){
+            document.getElementById("following").innerHTML+=`
+            <h4> Following: ${returnArr[4]}</h4>
+        `;
+        }
+        if (returnArr[6] === "1")
         {
             document.getElementById("btn-row").innerHTML+=`
                 <button type="button" onclick="deleteAccount()" id="delete-btn">Delete</button>
@@ -39,7 +62,7 @@ $( document ).ready(function() {
             `;
 
             if(document.getElementById("follow-btn") != null){
-                if (returnArr[3] === "1")
+                if (returnArr[5] === "1")
                 {
                     document.getElementById("follow-btn").innerHTML+=`Unfollow`;
                 }
@@ -48,6 +71,31 @@ $( document ).ready(function() {
                     document.getElementById("follow-btn").innerHTML+=`Follow`;
                 }
             }
+        }
+
+        const recipeArr = returnArr[7].split("@");
+        for (i = 0; i < recipeArr.length - 1; i++)
+        {
+            let temp = recipeArr[i].split("~");
+
+            if(document.getElementById("returnTable") != null){
+                document.getElementById("returnTable").innerHTML+=`
+                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                    <div class="row no-gutters">
+                        <div class="col-sm-2">
+                            <img src="../..${temp[6]}" width="100px" height="100px">
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="widget-entry">
+                                <span style="font-size: 24px;">${temp[5]}</span>
+                                <span style="font-size: 16px;">Author: ${temp[1]}</span>
+                                <span style="font-size: 12px;">Date: ${temp[3]}</span>
+                                <span style="font-size: 12px;"><span>Views: ${temp[2]}</span> <span>Favorites: ${temp[4]}</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `}
         }
         
         }
