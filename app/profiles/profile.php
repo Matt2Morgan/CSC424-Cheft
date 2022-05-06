@@ -90,7 +90,7 @@ if ($result) {
           $return_array = $return_array . $return_recipe;
         }
     } else {
-      echo "0 results";
+      $return_array = "0 results";
       }
 } else { 
     echo "Error in ".$query."

@@ -74,7 +74,7 @@ if ($result) {
           $return_array = $return_array . $return;
         }
     } else {
-      echo "0 results";
+      $return_array = "0 results";
       }
 } else { 
     echo "Error in ".$query."

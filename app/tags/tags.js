@@ -30,7 +30,6 @@ $( document ).ready(function() {
                     "FID": FID},
      success:function(result){
         const returnArr = result.split("@");
-        console.log(returnArr);
         for (i = 0; i < returnArr.length - 1; i++)
         {
             let temp = returnArr[i].split("|");

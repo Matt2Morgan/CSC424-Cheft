@@ -53,7 +53,7 @@ if ($result) {
             $_return_array = $_return_array . $return . "~";
         }
     } else {
-      echo "0 results";
+      $_return_array = "0 results";
     }
 } else { 
     echo "Error in ".$query."

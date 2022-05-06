@@ -23,7 +23,6 @@ $( document ).ready(function() {
                     "uid": UID},
      success:function(result){
         const returnArr = result.split("|");
-        console.log(returnArr);
         if(document.getElementById("name") != null){
             document.getElementById("name").innerHTML+=`
             <h1>${returnArr[0]}</h1>

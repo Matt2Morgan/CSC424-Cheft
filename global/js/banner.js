@@ -35,7 +35,7 @@ if(document.getElementById("Navbar") != null) {
         </div>
         <div class="col-2">
             <div class="nav-btn">
-                <a href="#">About Us</a>
+                <a href="../misc/about.html">About Us</a>
             </div>
         </div>
         <div class="col-2">

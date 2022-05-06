@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
     $_data_tags = $_data_tags . $_data_TID . "@" . $_data_tagname . "~";
   }
 } else {
-  echo "0 results";
+  $_data_tags = "0 results";
 }
 
 //Return Values
