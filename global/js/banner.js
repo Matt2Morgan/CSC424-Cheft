@@ -19,30 +19,18 @@ if(document.getElementById("Navbar") != null) {
             </div>
         </div>
         <div class="col-2">
-            <div class="nav-dropdown">
-                <button class="nav-dropbtn"> Recipes</button>
-                <div class="nav-dropdown-content">
-                    <a href="../recipes/recipes.html">All Recipes</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+            <div class="nav-btn">
+                <a href="../recipes/recipes.html">Recipes</a>
             </div>
         </div>
         <div class="col-3">
-            <div class="nav-dropdown">
-                <button class="nav-dropbtn"> Whats for Dinner?</button>
-                <div class="nav-dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
+            <div class="nav-btn">
+                <a href="../profiles/profiles.html">Users</a>
             </div>
         </div>
         <div class="col-2">
-            <div class="nav-dropdown">
-                <div class="nav-btn">
-                    <a href="#">About Us</a>
-                </div>
+            <div class="nav-btn">
+                <a href="#">About Us</a>
             </div>
         </div>
         <div class="col-3">

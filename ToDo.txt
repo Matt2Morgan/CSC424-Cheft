@@ -1,7 +1,7 @@
 Current Goals:
 Add Styling to All Pages
 Add Tags Feature
-Add Searchbars to Recipes, Users, and Tags
+Add Searchbars to Tags
 Finish Recipe Directions and Ingredients
 Attempt Picture Storage and Retrieval
 Add Favorite and Follow Buttons and methods
@@ -13,17 +13,18 @@ Implement Basic Routing and File Pathing methods
 Refine Login System With Encryption and Sessions Table in Database
 Recipe Folder System
 
-
-5/4 Planned Tasks:
-Searchbars
+DONE:
+Searchbars Recipes, Users
+Unfavorite Unfollow
 Favorite and Follow Buttons
-Tags Feature
 Recipe links
+Recipe Delete
 
 5/5 Planned Tasks:
 Add User Recipes to User Page
 Add Follower and Following Count and List to User Page
-Finish what wasnt finished on 5/4
+Tags Feature
+Add Recipe Creation Restrictions
 
 5/6 Planned Tasks:
 Add Styling to All Pages

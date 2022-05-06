@@ -18,17 +18,22 @@ $UID = $post->UID;
 
 if (!empty($search))
 {
-    $UID= 0;
+    $UID = 0;
+}
+else if (is_numeric($UID))
+{
+  $search = "XZXZXZXZXZXZXZX";
 }
 else
 {
-    $search = "XZXZXZXZXZXZXZX";
+    $search = "";
+    $UID = 0;
 }
 
 $_return_array = "";
 
 //Enter query and format return
-$sql = "SELECT `UID`, `username`, `name`, `email` FROM `users` WHERE `UID` = (SELECT `UID2` FROM `follows` WHERE `UID1` = $UID) or `username` LIKE '%$search%' or `name` LIKE '%$search%' or `email` LIKE '%$search%'";
+$sql = "SELECT `UID`, `username`, `name`, `email` FROM `users` WHERE `UID` IN (SELECT `UID2` FROM `follows` WHERE `UID1` = $UID) or `username` LIKE '%$search%' or `name` LIKE '%$search%' or `email` LIKE '%$search%'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {

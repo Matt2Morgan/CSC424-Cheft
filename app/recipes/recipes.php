@@ -42,13 +42,16 @@ else
 //Initialize Global Variables
 $_data_recipeID = "";
 $_data_user = "";
+$_data_views = "";
+$_data_date = "";
 $_data_recname = "";
 $_data_imagepath = "";
+$_data_fav = "";
 
 $return_array = "";
 
 //Enter query and format return
-$sql = "SELECT recipeID, username, recipename, imagepath FROM recipes WHERE `recipeID` = (SELECT `RID` FROM `favorites` WHERE `UID` = $FID) OR `AID` = '$AID' OR username LIKE '%$search%' OR recipename LIKE '%$search%'";
+$sql = "SELECT recipeID, username, views, upload_date, recipename, imagepath FROM recipes WHERE `recipeID` IN (SELECT `RID` FROM `favorites` WHERE `UID` = $FID) OR `AID` = '$AID' OR username LIKE '%$search%' OR recipename LIKE '%$search%'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
@@ -56,9 +59,18 @@ if ($result) {
         while($row = $result->fetch_assoc()) {
           $_data_recipeID = $row["recipeID"];
           $_data_user = $row["username"];
+          $_data_views = $row["views"];
+          $_data_date = $row["upload_date"];
           $_data_recname = $row["recipename"];
           $_data_imagepath = $row["imagepath"];
-          $return = $_data_recipeID . "|" . $_data_user . "|" . $_data_recname . "|" . $_data_imagepath . "@";
+
+          //Enter query and format return
+          $sql1 = "SELECT * FROM favorites WHERE RID = $_data_recipeID";
+          $result1 = $conn->query($sql1);
+
+          $_data_fav = $result1->num_rows;
+
+          $return = $_data_recipeID . "|" . $_data_user . "|" . $_data_views . "|" . $_data_date . "|" . $_data_fav . "|" . $_data_recname . "|" . $_data_imagepath . "@";
       
           $return_array = $return_array . $return;
         }

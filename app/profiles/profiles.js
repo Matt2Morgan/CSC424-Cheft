@@ -10,6 +10,12 @@ $( document ).ready(function() {
     const search = urlParams.get('search');
     const UID = urlParams.get('UID');
 
+    if (search !== null) {
+        if(document.getElementById("search") != null){
+            document.getElementById("search").value=`${search}`
+        }
+    }
+    
     //POST to getPage php script, format return and then add formatted html to document.
     $.ajax({url:"profiles.php",
             type: 'post',
@@ -44,3 +50,8 @@ $( document ).ready(function() {
         }
     })
 });
+
+function search() {
+    var inpSearch = document.getElementById("search").value;
+    window.location.href = `../profiles/profiles.html?search=${inpSearch}`;
+}

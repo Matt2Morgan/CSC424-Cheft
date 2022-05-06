@@ -55,7 +55,7 @@ if ($result) {
 }
 
 //FAVORITES
-$sql = "SELECT `recipename`, `recipeID` FROM `recipes` WHERE `recipeID` = (SELECT `RID` FROM `favorites` WHERE `UID` = '$UID')";
+$sql = "SELECT `recipename`, `recipeID` FROM `recipes` WHERE `recipeID` IN (SELECT `RID` FROM `favorites` WHERE `UID` = '$UID')";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
@@ -74,7 +74,7 @@ if ($result) {
 }
 
 //FOLLOWS
-$sql = "SELECT `username`, `UID` FROM `users` WHERE `UID` = (SELECT `UID2` FROM `follows` WHERE `UID1` = '$UID')";
+$sql = "SELECT `username`, `UID` FROM `users` WHERE `UID` IN (SELECT `UID2` FROM `follows` WHERE `UID1` = '$UID')";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
