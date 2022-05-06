@@ -22,7 +22,7 @@ $( document ).ready(function() {
     }
     
     //POST to getPage php script, format return and then add formatted html to document.
-    $.ajax({url:"recipes.php",
+    $.ajax({url:"tags.php",
             type: 'post',
             //Add search to POST
             data: { "search": search,
@@ -37,17 +37,11 @@ $( document ).ready(function() {
 
             if(document.getElementById("returnTable") != null){
                 document.getElementById("returnTable").innerHTML+=`
-                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                <a href="../tags/tag.html?TID=${temp[0]}">
                     <div class="row no-gutters">
-                        <div class="col-sm-2">
-                            <img src="../..${temp[6]}" width="100px" height="100px">
-                        </div>
                         <div class="col-sm-10">
                             <div class="widget-entry">
-                                <span style="font-size: 24px;">${temp[5]}</span>
-                                <span style="font-size: 16px;">Author: ${temp[1]}</span>
-                                <span style="font-size: 12px;">Date: ${temp[3]}</span>
-                                <span style="font-size: 12px;"><span>Views: ${temp[2]}</span> <span>Favorites: ${temp[4]}</span></span>
+                                <span style="font-size: 24px;">${temp[1]}</span>
                             </div>
                         </div>
                     </div>

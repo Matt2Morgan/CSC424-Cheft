@@ -5,6 +5,7 @@ require $path;
 $return_username = "";
 $return_recipes = "";
 $return_favorites = "";
+$return_tags = "";
 $return_follows = "";
 
 //Get data from POST
@@ -65,6 +66,25 @@ if ($result) {
     ".$db->error; 
 }
 
+//Favorite Tags
+$sql = "SELECT `tag_name`, `TID` FROM `tags` WHERE `TID` IN (SELECT `TID` FROM `tags_fav` WHERE `UID` = '$UID')";
+$result = $conn->query($sql);
+if ($result) {
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          $returnTagName = $row["tag_name"];
+          $returnTID = $row["TID"];
+          $return = $returnTagName."|".$returnTID;
+      
+          $return_tags = $return_tags.$return.'~';
+        }
+    }
+} else { 
+    echo "Error in ".$query."
+    ".$db->error; 
+}
+
 //FOLLOWS
 $sql = "SELECT `username`, `UID` FROM `users` WHERE `UID` IN (SELECT `UID2` FROM `follows` WHERE `UID1` = '$UID')";
 $result = $conn->query($sql);
@@ -84,7 +104,7 @@ if ($result) {
     ".$db->error; 
 }
 
-echo $return_username."@".$return_recipes."@".$return_favorites."@".$return_follows;
+echo $return_username."@".$return_recipes."@".$return_favorites."@".$return_tags."@".$return_follows;
 
 $conn->close();
 ?>

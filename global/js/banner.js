@@ -23,9 +23,14 @@ if(document.getElementById("Navbar") != null) {
                 <a href="../recipes/recipes.html">Recipes</a>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-2">
             <div class="nav-btn">
                 <a href="../profiles/profiles.html">Users</a>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="nav-btn">
+                <a href="../tags/tags.html">Tags</a>
             </div>
         </div>
         <div class="col-2">
@@ -33,7 +38,7 @@ if(document.getElementById("Navbar") != null) {
                 <a href="#">About Us</a>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-2">
             <div class="nav-btn">
                 <input type="search" id="nav-search" placeholder="Search Recipes..."> 
                 <button type="button" onclick="navbarSearch()" id="nav-search-submit">Go</button>
@@ -88,13 +93,8 @@ if(document.getElementById("Sidebar") != null){
 
         <button type="button" class="collapsible">Favorite Tags</button>
         <div class="collapse-content">
-            <ul class="collapse-content-list">
-                <li><a href="temp.html">Tag</a></li>
-                <li><a href="temp.html">Tag</a></li>
-                <li><a href="temp.html">Tag</a></li>
-                <li><a href="temp.html">Tag</a></li>
-                <li><a href="temp.html">Tag</a></li>
-                <li><a href="temp.html">Show More</a></li>
+            <ul id="tag-list" class="collapse-content-list">
+
             </ul>
         </div>
 

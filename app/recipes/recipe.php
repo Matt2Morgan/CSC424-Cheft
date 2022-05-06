@@ -26,14 +26,20 @@ $_data_calories = "";
 $_data_imagepath = "";
 
 //Enter query and format return
-$sql = "SELECT username, AID, upload_date, views, recipename, preptime, cooktime, calories, imagepath FROM recipes WHERE recipeID = $rid";
+$sql = "SELECT AID, upload_date, views, recipename, preptime, cooktime, calories, imagepath FROM recipes WHERE recipeID = $rid";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    $_data_user = $row["username"];
     $_data_AID = $row["AID"];
+
+    $sql1 = "SELECT `username` FROM `users` WHERE `UID` = '$_data_AID'";
+    $result1 = $conn->query($sql1);
+    while($row1 = $result1->fetch_assoc()) {
+      $_data_user = $row1["username"];
+    }
+
     $_data_date = $row["upload_date"];
     $_data_views = $row["views"];
     $_data_recname = $row["recipename"];

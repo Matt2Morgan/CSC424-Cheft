@@ -6,26 +6,24 @@ require $path;
 //Get data from POST
 $post = (object) $_POST;
 
-$uid1 = $post->uid1;
-$uid2 = $post->uid2;
+$tid = $post->tid;
+$uid = $post->uid;
 
 $return_array = "";
 
 //Enter query and format return
-$sql = "SELECT `username`, `name`, `email` FROM `users` WHERE `UID` = '$uid2'";
+$sql = "SELECT `tag_name` FROM `tags` WHERE `TID` = '$tid'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    $username = $row["username"];
-    $name = $row["name"];
-    $email = $row["email"];
+    $tag_name = $row["tag_name"];
   }
 }
 
 //Enter query and format return
-$sql = "SELECT * FROM follows WHERE `UID1` = '$uid1' AND `UID2` = '$uid2'";
+$sql = "SELECT * FROM `tags_fav` WHERE `TID` = '$tid' AND `UID` = '$uid'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0)
@@ -37,19 +35,11 @@ else
   $_data_favBool = false;
 }
 
-//Enter query and format return
-$sql = "SELECT * FROM `follows` WHERE `UID1` = '$uid1'";
+
+//Grab UID from tags db
+$sql = "SELECT * FROM tags WHERE `UID` = '$uid' AND `TID` = '$tid'";
 $result = $conn->query($sql);
-
-$_data_followingCnt = $result->num_rows;
-
-//Enter query and format return
-$sql = "SELECT * FROM `follows` WHERE `UID2` = '$uid2'";
-$result = $conn->query($sql);
-
-$_data_followerCnt = $result->num_rows;
-
-if ($uid1 == $uid2)
+if ($result->num_rows > 0)
 {
   $_data_isUser = true;
 }
@@ -59,7 +49,7 @@ else
 }
 
 //Enter query and format return
-$sql = "SELECT recipeID, AID, views, upload_date, recipename, imagepath FROM recipes WHERE `AID` = '$uid2'";
+$sql = "SELECT `recipeID`, `AID`, `views`, `upload_date`, `recipename`, `imagepath` FROM `recipes` WHERE `recipeID` IN (SELECT `RID` FROM `tags_link` WHERE `TID` = '$tid')";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
@@ -97,7 +87,7 @@ if ($result) {
     ".$db->error; 
 }
 
-$return = $username . "|" . $name . "|" . $email. "|" . $_data_followerCnt . "|" . $_data_followingCnt . "|" . $_data_favBool . "|" . $_data_isUser . "|" . $return_array;
+$return = $tag_name . "|" . $_data_favBool . "|" . $_data_isUser . "|" . $return_array;
 
 echo $return;
 

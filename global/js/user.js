@@ -90,7 +90,32 @@ $( document ).ready(function() {
                 `;
             };
 
-            const returnFollows = info[3].split("~");
+            const returnTags = info[3].split("~");
+            if(document.getElementById("tag-list") != null) {
+                if (returnTags.length - 1 <= 5){
+                    for (let i = 0; i < returnTags.length - 1; i++)
+                    {
+                        const temp = returnTags[i].split("|");
+                        document.getElementById("tag-list").innerHTML+=`
+                            <li><a href="../tags/tag.html?TID=${temp[1]}">${temp[0]}</a></li>
+                        `;
+                    }
+                }
+                else{
+                    for (let i = 0; i < 5; i++)
+                    {
+                        const temp = returnTags[i].split("|");
+                        document.getElementById("tag-list").innerHTML+=`
+                            <li><a href="../tags/tag.html?TID=${temp[1]}">${temp[0]}</a></li>
+                        `;
+                    }
+                }
+                document.getElementById("tag-list").innerHTML+=`
+                <li><a href="../tags/tags.html?FID=${localStorage.getItem("UID")}">Show More</a></li>
+                `;
+            };
+
+            const returnFollows = info[4].split("~");
             if(document.getElementById("follow-list") != null) {
                 if (returnFollows.length - 1 <= 5){
                     for (let i = 0; i < returnFollows.length - 1; i++)

@@ -3,12 +3,16 @@ Implement Basic Routing and File Pathing methods
 Refine Login System With Encryption and Sessions Table in Database
 Recipe Folder System
 
-5/6 Planned Tasks:
+Done:
 Add Recipe Creation Restrictions
+Remove Username from Recipe
 Add Tags Feature
 Add Searchbars to Tags
+
+5/6 Planned Tasks:
 Finish Recipe links to tags
 Finish Recipe Directions and Ingredients
+Add Edit and Recipe Creation Tools (tags image etc)
 Add Styling to All Pages
 Attempt Picture Storage and Retrieval
 

@@ -1,7 +1,7 @@
 // recipe getRec
 
-var followedUID;
-var followerUID;
+var TID = 0;
+var UID = 0;
 
 // Runs on page load
 $( document ).ready(function() {
@@ -9,47 +9,27 @@ $( document ).ready(function() {
     const urlParams = new URLSearchParams(queryString);
 
     // Get recipe ID from url
-    const tempFollowedUID = urlParams.get('UID');
-    const tempFollowerUID = localStorage.getItem("UID");
-    followedUID = tempFollowedUID;
-    followerUID = tempFollowerUID;
+    const tempTID = urlParams.get('TID');
+    const tempUID = localStorage.getItem("UID");
+    TID = tempTID;
+    UID = tempUID;
 
 
     //POST to getRec php script, format return and then append strings to html objects.
-    $.ajax({url:"profile.php",
+    $.ajax({url:"tag.php",
             type: 'post',
             //Add UID to POST
-            data: { "uid1": followerUID,
-                    "uid2": followedUID},
+            data: { "tid": TID,
+                    "uid": UID},
      success:function(result){
         const returnArr = result.split("|");
+        console.log(returnArr);
         if(document.getElementById("name") != null){
             document.getElementById("name").innerHTML+=`
-            <h1>${returnArr[1]}</h1>
+            <h1>${returnArr[0]}</h1>
         `;
         }
-        if(document.getElementById("username") != null){
-            document.getElementById("username").innerHTML+=`
-            <h2>Username: ${returnArr[0]}</h2>
-        `;
-        }
-        if(document.getElementById("email") != null){
-            document.getElementById("email").innerHTML+=`
-            <h2>Email: ${returnArr[2]}</h2>
-        `;
-        }
-        if(document.getElementById("followers") != null){
-            document.getElementById("followers").innerHTML+=`
-            <h4> Followers: ${returnArr[3]}</h4>
-        `;
-        }
-
-        if(document.getElementById("following") != null){
-            document.getElementById("following").innerHTML+=`
-            <h4> Following: ${returnArr[4]}</h4>
-        `;
-        }
-        if (returnArr[6] === "1")
+        if (returnArr[2] === "1")
         {
             document.getElementById("btn-row").innerHTML+=`
                 <button type="button" onclick="deleteAccount()" id="delete-btn">Delete</button>
@@ -58,22 +38,22 @@ $( document ).ready(function() {
         else
         {
             document.getElementById("btn-row").innerHTML+=`
-                <button type="button" onclick="follow()" id="follow-btn"></button>
+                <button type="button" onclick="favorite()" id="follow-btn"></button>
             `;
 
             if(document.getElementById("follow-btn") != null){
-                if (returnArr[5] === "1")
+                if (returnArr[1] === "1")
                 {
-                    document.getElementById("follow-btn").innerHTML+=`Unfollow`;
+                    document.getElementById("follow-btn").innerHTML+=`Unfavorite`;
                 }
                 else
                 {
-                    document.getElementById("follow-btn").innerHTML+=`Follow`;
+                    document.getElementById("follow-btn").innerHTML+=`Favorite`;
                 }
             }
         }
 
-        const recipeArr = returnArr[7].split("@");
+        const recipeArr = returnArr[3].split("@");
         for (i = 0; i < recipeArr.length - 1; i++)
         {
             let temp = recipeArr[i].split("~");
@@ -102,40 +82,23 @@ $( document ).ready(function() {
     })
 });
 
-function follow() {
-
-    $.ajax({url:"follow.php",
+function favorite() {
+    $.ajax({url:"favorite.php",
             type: 'post',
             //Add rid to POST
-            data: { "UID1": followerUID,
-                    "UID2": followedUID},
+            data: { "tid": TID,
+                    "uid": UID},
      success:function(result){
             if (result === "1")
             {
-                document.getElementById("follow-btn").textContent="Follow";
+                document.getElementById("follow-btn").textContent="Favorite";
                 location.reload();
             }
             else
             {
-                document.getElementById("follow-btn").textContent="Unfollow";
+                document.getElementById("follow-btn").textContent="Unfavorite";
                 location.reload();
             }
-        }
-    })
-}
-
-function deleteAccount() {
-    $.ajax({url:"delete.php",
-            type: 'post',
-            //Add rid to POSTs
-            data: { "UID": followerUID},
-     success:function(){
-            //Removes info from local storage
-            localStorage.removeItem("userLogged");
-            localStorage.removeItem("logTime");
-            localStorage.removeItem("UID");
-
-            window.location.href = "../login/login.html";
         }
     })
 }
