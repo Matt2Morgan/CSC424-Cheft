@@ -4,21 +4,12 @@ Add Tags Feature
 Add Searchbars to Tags
 Finish Recipe Directions and Ingredients
 Attempt Picture Storage and Retrieval
-Add Favorite and Follow Buttons and methods
-Finish Recipe links to tags and Users
-Keep Searchbar consistency
+Finish Recipe links to tags
 
 Future Goals:
 Implement Basic Routing and File Pathing methods
 Refine Login System With Encryption and Sessions Table in Database
 Recipe Folder System
-
-DONE:
-Searchbars Recipes, Users
-Unfavorite Unfollow
-Favorite and Follow Buttons
-Recipe links
-Recipe Delete
 
 5/5 Planned Tasks:
 Add User Recipes to User Page

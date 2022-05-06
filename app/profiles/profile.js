@@ -1,7 +1,7 @@
 // recipe getRec
 
-var followedUID = 0;
-var followerUID = 0;
+var followedUID;
+var followerUID;
 
 // Runs on page load
 $( document ).ready(function() {
@@ -19,24 +19,37 @@ $( document ).ready(function() {
     $.ajax({url:"profile.php",
             type: 'post',
             //Add UID to POST
-            data: { "UID1": followerUID,
-                    "UID2": followedUID},
+            data: { "uid1": followerUID,
+                    "uid2": followedUID},
      success:function(result){
         const returnArr = result.split("|");
-        console.log(returnArr);
         $("#username").append(returnArr[0]);
         $("#name").append(returnArr[1]);
         $("#email").append(returnArr[2]);
-        if(document.getElementById("follow-btn") != null){
-            if (returnArr[3] === "1")
-            {
-                document.getElementById("follow-btn").innerHTML+=`Unfollow`;
-            }
-            else
-            {
-                document.getElementById("follow-btn").innerHTML+=`Follow`;
+        if (returnArr[4] === "1")
+        {
+            document.getElementById("btn-row").innerHTML+=`
+                <button type="button" onclick="deleteAccount()" id="delete-btn">Delete</button>
+            `;
+        }
+        else
+        {
+            document.getElementById("btn-row").innerHTML+=`
+                <button type="button" onclick="follow()" id="follow-btn"></button>
+            `;
+
+            if(document.getElementById("follow-btn") != null){
+                if (returnArr[3] === "1")
+                {
+                    document.getElementById("follow-btn").innerHTML+=`Unfollow`;
+                }
+                else
+                {
+                    document.getElementById("follow-btn").innerHTML+=`Follow`;
+                }
             }
         }
+        
         }
     })
 });
@@ -59,6 +72,22 @@ function follow() {
                 document.getElementById("follow-btn").textContent="Unfollow";
                 location.reload();
             }
+        }
+    })
+}
+
+function deleteAccount() {
+    $.ajax({url:"delete.php",
+            type: 'post',
+            //Add rid to POSTs
+            data: { "UID": followerUID},
+     success:function(){
+            //Removes info from local storage
+            localStorage.removeItem("userLogged");
+            localStorage.removeItem("logTime");
+            localStorage.removeItem("UID");
+
+            window.location.href = "../login/login.html";
         }
     })
 }

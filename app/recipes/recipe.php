@@ -72,9 +72,18 @@ else
   $_data_favBool = false;
 }
 
+if ($uid == $_data_AID)
+{
+  $_data_isUser = true;
+}
+else
+{
+  $_data_isUser = false;
+}
+
 
 //Return Values
-$return = $_data_user . "|" . $_data_AID . "|" . $_data_date . "|" . $_data_views . "|" . $_data_favCnt .  "|" . $_data_favBool . "|" . $_data_recname . "|" . $_data_preptime . "|" . $_data_cooktime . "|" . $_data_calories . "|" . $_data_imagepath;
+$return = $_data_user . "|" . $_data_AID . "|" . $_data_date . "|" . $_data_views . "|" . $_data_favCnt .  "|" . $_data_favBool . "|" . $_data_recname . "|" . $_data_preptime . "|" . $_data_cooktime . "|" . $_data_calories . "|" . $_data_imagepath . "|" . $_data_isUser;
 
 echo $return;
 

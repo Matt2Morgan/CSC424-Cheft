@@ -49,16 +49,30 @@ $( document ).ready(function() {
         `;
         }
 
-        if(document.getElementById("favorite-btn") != null){
-            if (returnArr[5] === "1")
-            {
-                document.getElementById("favorite-btn").innerHTML+=`Unfavorite`;
-            }
-            else
-            {
-                document.getElementById("favorite-btn").innerHTML+=`Favorite`;
+        if (returnArr[11] === "1")
+        {
+            document.getElementById("btn-row").innerHTML+=`
+                <button type="button" onclick="deleteRecipe()" id="delete-btn">Delete</button>
+            `;
+        }
+        else
+        {
+            document.getElementById("btn-row").innerHTML+=`
+            <button type="button" onclick="favorite()" id="favorite-btn"></button>
+            `;
+
+            if(document.getElementById("favorite-btn") != null){
+                if (returnArr[5] === "1")
+                {
+                    document.getElementById("favorite-btn").innerHTML+=`Unfavorite`;
+                }
+                else
+                {
+                    document.getElementById("favorite-btn").innerHTML+=`Favorite`;
+                }
             }
         }
+        
         
         $("#recipeTitle").append(returnArr[6]);
         $("#prepTime").append(returnArr[7]);
@@ -90,6 +104,17 @@ function favorite() {
                 document.getElementById("favorite-btn").textContent="Unfavorite";
                 location.reload();
             }
+        }
+    })
+}
+
+function deleteRecipe() {
+    $.ajax({url:"delete.php",
+            type: 'post',
+            //Add rid to POSTs
+            data: { "RID": rid},
+     success:function(){
+            window.location.href = `../recipes/recipes.html?AID=${uid}`;
         }
     })
 }
