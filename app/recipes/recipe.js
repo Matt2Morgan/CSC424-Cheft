@@ -25,6 +25,7 @@ $( document ).ready(function() {
                     "uid": uid},
      success:function(result){
         const returnArr = result.split("|");
+        console.log(returnArr);
         if(document.getElementById("authorLink") != null){
             document.getElementById("authorLink").innerHTML+=`
             <h3> Author: <a href="../profiles/profile.html?UID=${returnArr[1]}">${returnArr[0]}</a></h3>
@@ -49,7 +50,7 @@ $( document ).ready(function() {
         `;
         }
 
-        if (returnArr[11] === "1")
+        if (returnArr[10] === "1")
         {
             document.getElementById("btn-row").innerHTML+=`
                 <button type="button" onclick="deleteRecipe()" id="delete-btn">Delete</button>
@@ -74,19 +75,41 @@ $( document ).ready(function() {
         }
 
         if(document.getElementById("tags") != null){
-            let tagRow = returnArr[12].split("~");
-
-            if(document.getElementById("tags") != null){
-                for (var i = 0; i < tagRow.length - 1; i++)
-                {
-                    let tagIndividual = tagRow[i].split("@");
-                    document.getElementById("tags").innerHTML+=`
-                    <div class="col-1"><a href="../tags/tag.html?TID=${tagIndividual[0]}" class="tag">${tagIndividual[1]}</a></div>
-                    `
-                }
+            let tagRow = returnArr[11].split("~");
+            for (var i = 0; i < tagRow.length - 1; i++)
+            {
+                let tagIndividual = tagRow[i].split("@");
+                document.getElementById("tags").innerHTML+=`
+                <div class="col-1"><a href="../tags/tag.html?TID=${tagIndividual[0]}" class="tag">${tagIndividual[1]}</a></div>
+                `
             }
         }
-        
+
+        if(document.getElementById("ingredients") != null){
+            let ingRow = returnArr[12].split(",");
+            for (var i = 0; i < ingRow.length - 1; i+=3)
+            {
+                document.getElementById("ingredients").innerHTML+=`
+                <div class="col-12"><span><input type="checkbox"> ${ingRow[i]}: ${ingRow[i+1]} ${ingRow[i+2]}</span></div>
+                `
+            }
+        }
+
+        if(document.getElementById("directions") != null){
+            let dirRow = returnArr[13].split(",");
+            for (var i = 0; i < dirRow.length - 1; i++)
+            {
+                document.getElementById("directions").innerHTML+=`
+                <div class="col-12"><span><input type="checkbox"> ${i+1}: ${dirRow[i]}</span></div>
+                `
+            }
+        }
+
+        if(document.getElementById("image") != null){
+            document.getElementById("image").innerHTML+=`
+            <img src="../../assets/img/recipe/${rid}.jpg" width="100%" height="500px"></img>
+            `
+        }
         
         $("#recipeTitle").append(returnArr[6]);
         $("#prepTime").append(returnArr[7]);
@@ -95,7 +118,6 @@ $( document ).ready(function() {
         $("#totalTime").append(totalTime);
         $("#servings").append("NA");
         $("#calories").append(returnArr[9]);
-        $("#imagePath").append(returnArr[10]);
         }
     })
 });

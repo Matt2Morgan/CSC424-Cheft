@@ -36,13 +36,16 @@
         <div class="content">
             <div class="Navbar" id="Navbar"></div>
 
-            <div class="add-recipe-form">
-                <input type="text" id="recipe-title" placeholder="Recipe Title">
-                <input type="number" id="prep-time" placeholder="Prep Time (in hours)">
-                <input type="number" id="cook-time" placeholder="Cook Time (in hours)">
-                <input type="number" id="calories" placeholder="Calories">
-                <button type="button" onclick="submit_recipe()" id="add-recipe-btn"> Submit </button>
-            </div>
+            <form id="addRecipeForm" class="add-recipe-form">
+                <input type="text" id="recipeTitle" name="recipeTitle" placeholder="Recipe Title">
+                <input type="number" id="prepTime" name="prepTime" placeholder="Prep Time (in hours)">
+                <input type="number" id="cookTime" name="cookTime" placeholder="Cook Time (in hours)">
+                <input type="number" id="calories" name="calories" placeholder="Calories">
+                <input type="file" id="image" name="image" accept="image/jpg">
+                <input type="submit" id="submit-btn" name="submit-btn" class="d-none">
+            </form>
+            
+            <button type="button" onclick="submit_recipe()" id="add-recipe-btn" name="add-recipe-btn"> Submit </button>
 
             <div id="tags" class="tags-row row">
             </div>

@@ -4,13 +4,19 @@
 //Runs on button click
 function submit_recipe() {
     //Get data from page
-    var recipe_title = document.getElementById("recipe-title").value;
-    var prep_time = document.getElementById("prep-time").value;
-    var cook_time = document.getElementById("cook-time").value;
+    var recipe_title = document.getElementById("recipeTitle").value;
+    var prep_time = document.getElementById("prepTime").value;
+    var cook_time = document.getElementById("cookTime").value;
     var calories = document.getElementById("calories").value;
     var AID = localStorage.getItem("UID");
-    
 
+    var form = document.querySelector('.add-recipe-form');
+    var formData = new FormData(form);
+    formData.append('AID', AID);
+
+    for(var pair of formData.entries()) {
+        console.log(pair[0]+ ', '+ pair[1]);
+    }
     var rtaken = false;
     
     //POST PHP user exists to check if user or email is taken
@@ -52,12 +58,9 @@ function submit_recipe() {
     //POST to addRec php script, no return currently other than success or failure.
     $.ajax({url:"addrecipe.php",
             type: 'post',
-            //Add page date to POST
-            data: { "recipe_title": recipe_title,
-                "prep_time": prep_time, 
-                "cook_time": cook_time,
-                "calories": calories,
-                "AID": AID},
+            contentType: false,
+            processData: false,
+            data: formData,
      success:function(result){
         window.location.href = `../recipes/recipe.html?rid=${result}`;
         }

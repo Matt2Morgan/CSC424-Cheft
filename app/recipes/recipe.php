@@ -25,9 +25,11 @@ $_data_cooktime = "";
 $_data_calories = "";
 $_data_imagepath = "";
 $_data_tags = "";
+$_data_ingredients = "";
+$_data_directions = "";
 
 //Enter query and format return
-$sql = "SELECT AID, upload_date, views, recipename, preptime, cooktime, calories, imagepath FROM recipes WHERE recipeID = $rid";
+$sql = "SELECT AID, upload_date, views, recipename, preptime, cooktime, calories, ingredients, directions FROM recipes WHERE recipeID = $rid";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -47,7 +49,8 @@ if ($result->num_rows > 0) {
     $_data_preptime = $row["preptime"];
     $_data_cooktime = $row["cooktime"];
     $_data_calories = $row["calories"];
-    $_data_imagepath = $row["imagepath"];
+    $_data_ingredients = $row["ingredients"];
+    $_data_directions = $row["directions"];
   }
 } else {
   echo "0 results";
@@ -98,7 +101,7 @@ if ($result->num_rows > 0) {
 }
 
 //Return Values
-$return = $_data_user . "|" . $_data_AID . "|" . $_data_date . "|" . $_data_views . "|" . $_data_favCnt .  "|" . $_data_favBool . "|" . $_data_recname . "|" . $_data_preptime . "|" . $_data_cooktime . "|" . $_data_calories . "|" . $_data_imagepath . "|" . $_data_isUser . "|" . $_data_tags;
+$return = $_data_user . "|" . $_data_AID . "|" . $_data_date . "|" . $_data_views . "|" . $_data_favCnt .  "|" . $_data_favBool . "|" . $_data_recname . "|" . $_data_preptime . "|" . $_data_cooktime . "|" . $_data_calories . "|" . $_data_isUser . "|" . $_data_tags . "|" . $_data_ingredients . "|" . $_data_directions;
 
 echo $return;
 
