@@ -83,7 +83,7 @@ $( document ).ready(function() {
                 <a href="../recipes/recipe.html?rid=${temp[0]}">
                     <div class="row no-gutters">
                         <div class="col-sm-2">
-                            <img src="../..${temp[6]}" width="100px" height="100px">
+                            <img src="../../assets/img/recipe/${temp[0]}.jpg" width="100px" height="100px">
                         </div>
                         <div class="col-sm-10">
                             <div class="widget-entry">

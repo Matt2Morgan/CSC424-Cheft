@@ -59,7 +59,7 @@ else
 }
 
 //Enter query and format return
-$sql = "SELECT recipeID, AID, views, upload_date, recipename, imagepath FROM recipes WHERE `AID` = '$uid2'";
+$sql = "SELECT recipeID, AID, views, upload_date, recipename FROM recipes WHERE `AID` = '$uid2'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {
@@ -77,7 +77,6 @@ if ($result) {
           $_data_views = $row["views"];
           $_data_date = $row["upload_date"];
           $_data_recname = $row["recipename"];
-          $_data_imagepath = $row["imagepath"];
 
           //Enter query and format return
           $sql1 = "SELECT * FROM favorites WHERE RID = $_data_recipeID";
@@ -85,7 +84,7 @@ if ($result) {
 
           $_data_fav = $result1->num_rows;
 
-          $return_recipe = $_data_recipeID . "~" . $_data_user . "~" . $_data_views . "~" . $_data_date . "~" . $_data_fav . "~" . $_data_recname . "~" . $_data_imagepath . "@";
+          $return_recipe = $_data_recipeID . "~" . $_data_user . "~" . $_data_views . "~" . $_data_date . "~" . $_data_fav . "~" . $_data_recname . "@";
       
           $return_array = $return_array . $return_recipe;
         }
