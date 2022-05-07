@@ -53,6 +53,7 @@ $( document ).ready(function() {
         {
             document.getElementById("btn-row").innerHTML+=`
                 <button type="button" onclick="deleteAccount()" id="delete-btn">Delete</button>
+                <button type="button" onclick="editAccount()" id="edit-btn">Edit</button>
             `;
         }
         else

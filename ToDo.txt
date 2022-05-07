@@ -1,17 +1,21 @@
 Future Goals:
 Implement Basic Routing and File Pathing methods
 Refine Login System With Encryption and Sessions Table in Database
+Add Better Profile Restrictions
 Recipe Folder System
 
 Done:
-Finish Recipe Directions and Ingredients
-Attempt Picture Storage and Retrieval
+Clean Up Add Recipe Script
+Add Picture Removal After Recipe / Account Deletion
+Add Profile Restrictions For not being logged in(Kinda)
 
 5/6 Planned Tasks:
-Add Picture Removal After Recipe / Account Deletion
-Add Profile Restrictions For not being logged in
-Add Tags and Directions to add recipe
-Add Edit and Recipe Creation Tools (tags image etc)
+Recipe Creation Tools (tags image etc)
+
+
+Final Tasks:
 Add Styling to All Pages
+Comment and Clean Up All Code
+Add Edit
 
 

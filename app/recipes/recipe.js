@@ -25,7 +25,6 @@ $( document ).ready(function() {
                     "uid": uid},
      success:function(result){
         const returnArr = result.split("|");
-        console.log(returnArr);
         if(document.getElementById("authorLink") != null){
             document.getElementById("authorLink").innerHTML+=`
             <h3> Author: <a href="../profiles/profile.html?UID=${returnArr[1]}">${returnArr[0]}</a></h3>
@@ -54,6 +53,7 @@ $( document ).ready(function() {
         {
             document.getElementById("btn-row").innerHTML+=`
                 <button type="button" onclick="deleteRecipe()" id="delete-btn">Delete</button>
+                <button type="button" onclick="editRecipe()" id="edit-btn">Edit</button>
             `;
         }
         else

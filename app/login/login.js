@@ -40,6 +40,11 @@ function phpSignup() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var repassword = document.getElementById("rePassword").value;
+    var image = document.getElementById("image").value;
+
+    var form = document.querySelector('.lsi-wrapper');
+    var formData = new FormData(form);
+
     var etaken = false;
     var utaken = false;
 
@@ -93,7 +98,7 @@ function phpSignup() {
         return;
     }
 
-    if (email === "" || name === "" || username === "" || password === "" || repassword === ""){
+    if (email === "" || image === "" || name === "" || username === "" || password === "" || repassword === ""){
         alert ("Empty Fields!");
         return;
     }
@@ -106,13 +111,12 @@ function phpSignup() {
     //POST to Signup PHP
     $.ajax({url:"signup.php",
             type: 'post',
-            data: { "email": email, 
-                "name": name, 
-                "username": username, 
-                "password": password},
+            contentType: false,
+            processData: false,
+            data: formData,
      success:function(result){
         alert(result);
-        window.location.href = "../login/login.html";
+        //window.location.href = "../login/login.html";
         }
     })
 }

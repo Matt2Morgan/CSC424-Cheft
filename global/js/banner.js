@@ -59,18 +59,12 @@ if(document.getElementById("Sidebar") != null){
     <button type="button" class="collapse-sidebar-button"></button>
     <div id="top-menu" class="top-menu row">
         <div id="profile-menu" class="col-12 profile-menu" style="padding: 0;">
-            <div class="profile-icon">
+            <div id="profile-icon" class="profile-icon">
 
             </div>
             <div class="profile-name">
                 <span id="user-name"></span>
             </div>
-        </div>
-
-        <div id="add-menu" class="col-12 add-menu" style="padding: 0;">
-            <a class="add-button" href="../recipes/addrecipe.html">
-                <span> Add Recipe + </span>
-            </a>
         </div>
     </div>
 

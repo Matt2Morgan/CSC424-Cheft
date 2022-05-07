@@ -40,16 +40,17 @@
             <div class="Navbar" id="Navbar"></div>
 
             <div class="lsi-row row">
-                <div class="lsi-wrapper">
+                <form class="lsi-wrapper">
                     <input type="email" id="email" name="email" placeholder="Email">
                     <input type="text" id="name" name="name" placeholder="Name">
                     <input type="text" id="username" name="username" placeholder="Username">
                     <input type="password" id="password" name="password" placeholder="Password">
                     <input type="password" id="rePassword" name="rePassword" placeholder="Repeat Password">
-                    <button type="button" onclick="phpSignup()">Signup</button>
-
-                    <a href="./login.html">Already Have an Account?</a>
-                </div>
+                    <input type="file" id="image" name="image" accept="image/jpg">
+                    <input type="submit" id="btnSubmit" name="btnSubmit" class="d-none">
+                </form>
+                <button type="button" onclick="phpSignup()">Signup</button>
+                <a href="./login.html">Already Have an Account?</a>
             </div>
             
         </div>

@@ -33,6 +33,22 @@ $( document ).ready(function() {
                 type: 'post',
                 data: { "UID": localStorage.getItem("UID")},
         success:function(result){
+            if (document.getElementById("profile-icon")!=null) {
+                document.getElementById("profile-icon").innerHTML+=`
+                    <img src="../../assets/img/profile/${localStorage.getItem("UID")}.jpg" width="100%" height="100%">
+                `;
+            }
+
+            if (document.getElementById("top-menu")!=null) {
+                document.getElementById("top-menu").innerHTML+=`
+                <div id="add-menu" class="col-12 add-menu" style="padding: 0;">
+                    <a class="add-button" href="../recipes/addrecipe.html">
+                        <span> Add Recipe + </span>
+                    </a>
+                </div>
+                `;
+            }
+
             const info = result.split("@");
             if (document.getElementById("user-name")!=null) {
                 document.getElementById("user-name").innerHTML+=`

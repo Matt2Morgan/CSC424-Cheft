@@ -8,15 +8,13 @@ function submit_recipe() {
     var prep_time = document.getElementById("prepTime").value;
     var cook_time = document.getElementById("cookTime").value;
     var calories = document.getElementById("calories").value;
+    var calories = document.getElementById("calories").value;
     var AID = localStorage.getItem("UID");
 
     var form = document.querySelector('.add-recipe-form');
     var formData = new FormData(form);
     formData.append('AID', AID);
-
-    for(var pair of formData.entries()) {
-        console.log(pair[0]+ ', '+ pair[1]);
-    }
+    
     var rtaken = false;
     
     //POST PHP user exists to check if user or email is taken
@@ -50,7 +48,7 @@ function submit_recipe() {
         return;
     }
 
-    if (recipe_title === "" || prep_time === "" || cook_time === "" || calories === ""){
+    if (recipe_title === "" || image === "" || prep_time === "" || cook_time === "" || calories === ""){
         alert ("Empty Fields!");
         return;
     }

@@ -33,7 +33,7 @@ $( document ).ready(function() {
                 <a href="../profiles/profile.html?UID=${info[0]}">
                     <div class="row no-gutters">
                         <div class="col-sm-2">
-                            <img src="../..${info[3]}" width="100px" height="100px">
+                            <img src="../../assets/img/profile/${info[0]}.jpg" width="100px" height="100px">
                         </div>
                         <div class="col-sm-10">
                             <div class="widget-entry">
