@@ -42,7 +42,7 @@ function submit_recipe() {
         return;
     }
 
-    if (!recipe_title.match(/^(?=[a-zA-Z0-9._ ]{4,14}$)(?!.*[ _.]{2})[^ _.].*[^ _.]$/))
+    if (!recipe_title.match(/^(?=[a-zA-Z0-9._ ]{4,28}$)(?!.*[ _.]{2})[^ _.].*[^ _.]$/))
     {
         alert ("Invalid Recipe Name!");
         return;

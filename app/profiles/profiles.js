@@ -30,12 +30,12 @@ $( document ).ready(function() {
 
             if(document.getElementById("returnTable") != null){
                 document.getElementById("returnTable").innerHTML+=`
-                <a href="../profiles/profile.html?UID=${info[0]}">
+                <a class="users-return col-lg-4" href="../profiles/profile.html?UID=${info[0]}">
                     <div class="row no-gutters">
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <img src="../../assets/img/profile/${info[0]}.jpg" width="100px" height="100px">
                         </div>
-                        <div class="col-sm-10">
+                        <div class="col-sm-8">
                             <div class="widget-entry">
                                 <span style="font-size: 24px;">${info[2]}</span>
                                 <span style="font-size: 16px;">Username: ${info[1]}</span>
@@ -45,6 +45,7 @@ $( document ).ready(function() {
                         </div>
                     </div>
                 </a>
+                <div class="col-lg-7 blank-space"></div>
             `}
         }
         }

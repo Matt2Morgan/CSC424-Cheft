@@ -12,7 +12,6 @@ Add Profile Restrictions For not being logged in(Kinda)
 5/6 Planned Tasks:
 Recipe Creation Tools (tags image etc)
 
-
 Final Tasks:
 Add Styling to All Pages
 Comment and Clean Up All Code

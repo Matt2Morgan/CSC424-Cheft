@@ -116,7 +116,7 @@ function phpSignup() {
             data: formData,
      success:function(result){
         alert(result);
-        //window.location.href = "../login/login.html";
+        window.location.href = "../login/login.html";
         }
     })
 }

@@ -13,11 +13,7 @@ $( document ).ready(function() {
 
     if (search !== null) {
         if(document.getElementById("search") != null){
-            document.getElementById("search").value=`${search}`
-        }
-    
-        if(document.getElementById("nav-search") != null){
-            document.getElementById("nav-search").value=`${search}`
+            document.getElementById("search").value=`${search}`;
         }
     }
     
@@ -53,5 +49,5 @@ $( document ).ready(function() {
 
 function search() {
     var inpSearch = document.getElementById("search").value;
-    window.location.href = `../recipes/recipes.html?search=${inpSearch}`;
+    window.location.href = `../tags/tags.html?search=${inpSearch}`;
 }

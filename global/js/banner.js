@@ -1,11 +1,5 @@
 //banner.jS
 
-function navbarSearch() {
-    var search = document.getElementById("nav-search").value;
-    window.location.href = "../recipes/recipes.html?search=" + search;
-}
-
-
 ////////////////
 /////Navbar/////
 ////////////////
@@ -40,8 +34,7 @@ if(document.getElementById("Navbar") != null) {
         </div>
         <div class="col-2">
             <div class="nav-btn">
-                <input type="search" id="nav-search" placeholder="Search Recipes..."> 
-                <button type="button" onclick="navbarSearch()" id="nav-search-submit">Go</button>
+                <a href="../misc/contact.html">Contact</a>
             </div>
         </div>
     </div>

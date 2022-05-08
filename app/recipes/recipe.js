@@ -27,25 +27,25 @@ $( document ).ready(function() {
         const returnArr = result.split("|");
         if(document.getElementById("authorLink") != null){
             document.getElementById("authorLink").innerHTML+=`
-            <h3> Author: <a href="../profiles/profile.html?UID=${returnArr[1]}">${returnArr[0]}</a></h3>
+            <h3 class="recipe-author"> Author: <a href="../profiles/profile.html?UID=${returnArr[1]}">${returnArr[0]}</a></h3>
         `;
         }
 
         if(document.getElementById("date") != null){
             document.getElementById("date").innerHTML+=`
-            <h4> Date Uploaded: ${returnArr[2]}</h4>
+            <h4 class="recipe-date"> Date Uploaded: ${returnArr[2]}</h4>
         `;
         }
 
         if(document.getElementById("views") != null){
             document.getElementById("views").innerHTML+=`
-            <h4> Views: ${returnArr[3]}</h4>
+            <h4 class="recipe-views"> Views: ${returnArr[3]}</h4>
         `;
         }
 
         if(document.getElementById("favorites") != null){
             document.getElementById("favorites").innerHTML+=`
-            <h4> Favorites: ${returnArr[4]}</h4>
+            <h4 class="recipe-favorites"> Favorites: ${returnArr[4]}</h4>
         `;
         }
 
@@ -86,36 +86,43 @@ $( document ).ready(function() {
         }
 
         if(document.getElementById("ingredients") != null){
-            let ingRow = returnArr[12].split(",");
-            for (var i = 0; i < ingRow.length - 1; i+=3)
+            if (returnArr[12] !== "")
             {
-                document.getElementById("ingredients").innerHTML+=`
-                <div class="col-12"><span><input type="checkbox"> ${ingRow[i]}: ${ingRow[i+1]} ${ingRow[i+2]}</span></div>
-                `
+                let ingRow = returnArr[12].split(",");
+                for (var i = 0; i < ingRow.length; i+=3)
+                {
+                    document.getElementById("ingredients").innerHTML+=`
+                    <div class="col-12"><span><input type="checkbox"> ${ingRow[i]}: ${ingRow[i+1]} ${ingRow[i+2]}</span></div>
+                    `
+                }
             }
+            
         }
 
         if(document.getElementById("directions") != null){
-            let dirRow = returnArr[13].split(",");
-            for (var i = 0; i < dirRow.length - 1; i++)
+            if (returnArr[13] !== "")
             {
-                document.getElementById("directions").innerHTML+=`
-                <div class="col-12"><span><input type="checkbox"> ${i+1}: ${dirRow[i]}</span></div>
-                `
+                let dirRow = returnArr[13].split(",");
+                for (var i = 0; i < dirRow.length; i++)
+                {
+                    document.getElementById("directions").innerHTML+=`
+                    <div class="col-12"><span><input type="checkbox"> ${i+1}: ${dirRow[i]}</span></div>
+                    `
+                }
             }
         }
 
         if(document.getElementById("image") != null){
             document.getElementById("image").innerHTML+=`
-            <img src="../../assets/img/recipe/${rid}.jpg" width="100%" height="500px"></img>
+            <img src="../../assets/img/recipe/${rid}.jpg" width="100%" height="100%"></img>
             `
         }
         
         $("#recipeTitle").append(returnArr[6]);
-        $("#prepTime").append(returnArr[7]);
-        $("#cookTime").append(returnArr[8]);
+        $("#prepTime").append(`${returnArr[7]} hr`);
+        $("#cookTime").append(`${returnArr[8]} hr`);
         var totalTime = +returnArr[7] + +returnArr[8];
-        $("#totalTime").append(totalTime);
+        $("#totalTime").append(`${totalTime} hr`);
         $("#servings").append("NA");
         $("#calories").append(returnArr[9]);
         }

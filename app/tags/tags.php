@@ -38,7 +38,7 @@ $_data_tagname = "";
 $return_array = "";
 
 //Enter query and format return
-$sql = "SELECT `TID`, `tag_name` FROM tags WHERE `TID` IN (SELECT `TID` FROM `tags_fav` WHERE `UID` = $FID) OR `UID` = '$AID' OR tag_name LIKE '%$search%'";
+$sql = "SELECT `TID`, `tag_name` FROM tags WHERE `TID` IN (SELECT `TID` FROM `tags_fav` WHERE `UID` = '$FID') OR `UID` = '$AID' OR `tag_name` LIKE '%$search%'";
 $result = $conn->query($sql);
 if ($result) {
     if ($result->num_rows > 0) {

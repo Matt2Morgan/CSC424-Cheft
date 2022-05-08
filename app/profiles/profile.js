@@ -81,12 +81,12 @@ $( document ).ready(function() {
 
             if(document.getElementById("returnTable") != null){
                 document.getElementById("returnTable").innerHTML+=`
-                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                <a class="recipes-return col-12" href="../recipes/recipe.html?rid=${temp[0]}">
                     <div class="row no-gutters">
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <img src="../../assets/img/recipe/${temp[0]}.jpg" width="100px" height="100px">
                         </div>
-                        <div class="col-sm-10">
+                        <div class="col-sm-8">
                             <div class="widget-entry">
                                 <span style="font-size: 24px;">${temp[5]}</span>
                                 <span style="font-size: 16px;">Author: ${temp[1]}</span>

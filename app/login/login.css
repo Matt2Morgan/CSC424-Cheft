@@ -1,0 +1,13 @@
+.lsi-wrapper {
+    width: 40vw;
+    margin-left: calc(50% - 20vw);
+    border: solid;
+    border-radius: 5px;
+    border-color: #446948;
+    border-width: 2px;
+    padding: 5px;
+}
+
+.header {
+    text-align: center;
+}

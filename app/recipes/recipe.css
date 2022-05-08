@@ -1,0 +1,29 @@
+.recipe-header, .tags-row, .recipe-info-row, .ingredients-row, .directions-row {
+    border: solid;
+    border-radius: 5px;
+    border-color: #446948;
+    border-width: 2px;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.recipe-main, .picture-wrapper{
+    height: 40vh;
+}
+
+.recipe_picture {
+    height: 40vh;
+    width: 100%;
+}
+
+.button-row {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-title, .recipe-author, .recipe-views, .recipe-favorites, .recipe-date {
+    text-align: center;
+}

@@ -21,7 +21,7 @@ $( document ).ready(function() {
 
             if(document.getElementById("returnPopular") != null){
                 document.getElementById("returnPopular").innerHTML+=`
-                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                <a class="recipes-return col-12" href="../recipes/recipe.html?rid=${temp[0]}">
                     <div class="row no-gutters">
                         <div class="col-sm-4">
                             <img src="../../assets/img/recipe/${temp[0]}.jpg" width="100px" height="100px">
@@ -44,7 +44,7 @@ $( document ).ready(function() {
 
             if(document.getElementById("returnFavorite") != null){
                 document.getElementById("returnFavorite").innerHTML+=`
-                <a href="../recipes/recipe.html?rid=${temp[0]}">
+                <a class="recipes-return col-12" href="../recipes/recipe.html?rid=${temp[0]}">
                     <div class="row no-gutters">
                         <div class="col-sm-4">
                             <img src="../../assets/img/recipe/${temp[0]}.jpg" width="100px" height="100px">
