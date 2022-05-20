@@ -10,11 +10,9 @@ Add Picture Removal After Recipe / Account Deletion
 Add Profile Restrictions For not being logged in(Kinda)
 
 5/6 Planned Tasks:
-Recipe Creation Tools (tags image etc)
 
 Final Tasks:
-Add Styling to All Pages
+Add Styling to Tags
+Recipe Creation Tools (tags image etc)
 Comment and Clean Up All Code
 Add Edit
-
-
